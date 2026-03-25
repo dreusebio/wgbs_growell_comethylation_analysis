@@ -30,7 +30,7 @@ Behavioral and environmental covariates
 
 ### Clone
 ```bash
-git clone https://github.com/[ORG_OR_USER]/[REPO].git
+git clone https://github.com/dreusebio/wgbs_growell_comethylation_analysis.git
 cd [REPO]
 ```
 
