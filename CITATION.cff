@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it."
-title: "PROJECT_NAME"
+title: "GROWell WGBS Comethylation Analysis"
 type: software
 authors:
-  - family-names: "Lab"
-    given-names: "Your"
-    affiliation: "Your Institution"
+  - family-names: "Kuodza"
+    given-names: "George Eusebio"
+    affiliation: "University of California, Davis"
