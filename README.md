@@ -17,12 +17,16 @@ Behavioral and environmental covariates
 
 # Data Description
 **Data type(s):** Whole-Genome Bisulfite Sequencing (WGBS)
+
 **Study/cohort:** GROWell (Goals for Reaching Optimal Wellness)
+
 **Sample type:** Dried Blood Spots (DBS)
+
 **Timepoints:**
  1. Baseline (early pregnancy)
  2. 36–38 weeks gestation
  3. ~3 months postpartum
+
 **Genome build:** hg38
 ---
 
