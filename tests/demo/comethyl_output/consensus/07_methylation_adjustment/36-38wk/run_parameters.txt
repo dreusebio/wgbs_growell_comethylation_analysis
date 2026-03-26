@@ -1,0 +1,22 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+input_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/36-38wk_Methylation_complete.rds
+input_pcs: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PCs.rds
+pc_trait_stats: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PC_Trait_Correlation_Stats_Bicor.tsv
+protected_traits_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt
+technical_traits_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt
+run_v1: FALSE
+run_v2: TRUE
+run_v3: FALSE
+v2_cor_method: bicor
+v2_p_thresh: 0.05
+v3_p_thresh: 0.05
+dataset_label: 36-38wk
+cpg_label: 05b_shared_complete
+region_label: shared
+n_samples_after_alignment: 43
+n_regions: 11243
+n_total_pcs: 8
+n_protected_traits_found: 19
+n_technical_traits_found: 3
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/36-38wk
+date: 2026-03-26 10:16:02.627056

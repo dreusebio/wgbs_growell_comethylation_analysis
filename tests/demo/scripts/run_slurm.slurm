@@ -46,21 +46,21 @@ Rscript --vanilla -e 'cat("R_LIBS_USER=", Sys.getenv("R_LIBS_USER"), "\n"); prin
 Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/00_import_cpg_reports_consensus.R \
   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
   --dataset_label Baseline \
-  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx \
+  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_baseline.xlsx \
   --cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Baseline/cytosine_reports \
   --workers 8
 
 Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/00_import_cpg_reports_consensus.R \
   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
   --dataset_label 36-38wk \
-  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx \
+  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_36_38wk.xlsx \
   --cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/36-38wk/cytosine_reports \
   --workers 8
 
 Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/00_import_cpg_reports_consensus.R \
   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
   --dataset_label Postpartum \
-  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx \
+  --meta_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_postpartum.xlsx \
   --cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Postpartum/cytosine_reports \
   --workers 8
 
@@ -92,10 +92,10 @@ Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/d
   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
   --reference_bs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/01_reference_filter_regions/Baseline/cov3_75pct/Filtered_BSseq.rds \
   --dataset1_label 36-38wk \
-  --dataset1_meta /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx \
+  --dataset1_meta /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_36_38wk.xlsx \
   --dataset1_cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/36-38wk/cytosine_reports \
   --dataset2_label Postpartum \
-  --dataset2_meta /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx \
+  --dataset2_meta  /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_postpartum.xlsx \
   --dataset2_cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Postpartum/cytosine_reports \
   --cov 1 \
   --per_sample 0.01 \
@@ -110,28 +110,93 @@ Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/d
   --dataset2_label Postpartum \
   --dataset2_bs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/04_align_to_reference_cpgs/Postpartum/Filtered_BSseq.rds
 
+# Script 05b
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/05b_filter_shared_complete_regions_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --dataset1_label Baseline \
+  --dataset1_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/Baseline/cov3_75pct/covMin4_methSD0p05/Region_Methylation.rds \
+  --dataset2_label 36-38wk \
+  --dataset2_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/36-38wk/36-38wk/covMin4_methSD0p05/Region_Methylation.rds \
+  --dataset3_label Postpartum \
+  --dataset3_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/Postpartum/Postpartum/covMin4_methSD0p05/Region_Methylation.rds
+
 # Script 06
 
-Rscript scripts/consensus/06_pc_diagnostics_consensus.R \
-  --project_root /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis \
-  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis/comethyl_output/consensus/03_region_methylation/Baseline/cov3_75pct/covMin4_methSD0p08/Region_Methylation.rds \
-  --sample_info /path/to/Baseline_sample_info.xlsx \
-  --sample_id_col Sample_ID \
-  --protected_traits_file /path/to/protected_traits.txt \
-  --technical_traits_file /path/to/technical_traits.txt
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/06_pc_diagnostics_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Baseline_Methylation_complete.rds \
+  --sample_info /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_baseline.xlsx \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --selected_trait_mode   protected
 
-  Rscript scripts/consensus/06_pc_diagnostics_consensus.R \
-  --project_root /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis \
-  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis/comethyl_output/consensus/03_region_methylation/TP36_38weeks/cov1_1pct/covMin4_methSD0p08/Region_Methylation.rds \
-  --sample_info /path/to/TP36_sample_info.xlsx \
-  --sample_id_col Sample_ID \
-  --protected_traits_file /path/to/protected_traits.txt \
-  --technical_traits_file /path/to/technical_traits.txt
+  Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/06_pc_diagnostics_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/36-38wk_Methylation_complete.rds \
+  --sample_info /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_36_38wk.xlsx \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --selected_trait_mode   protected
+  
+  Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/06_pc_diagnostics_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Postpartum_Methylation_complete.rds \
+  --sample_info /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_postpartum.xlsx \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --selected_trait_mode   protected
 
-  Rscript scripts/consensus/06_pc_diagnostics_consensus.R \
-  --project_root /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis \
-  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis/comethyl_output/consensus/03_region_methylation/TP36_38weeks/cov1_1pct/covMin4_methSD0p08/Region_Methylation.rds \
-  --sample_info /path/to/TP36_sample_info.xlsx \
-  --sample_id_col Sample_ID \
-  --protected_traits_file /path/to/protected_traits.txt \
-  --technical_traits_file /path/to/technical_traits.txt
+#Script 07
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Baseline_Methylation_complete.rds \
+  --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Baseline/PCs.rds \
+  --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Baseline/PC_Trait_Correlation_Stats_Bicor.tsv \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --run_v1 FALSE \
+  --run_v2 TRUE \
+  --run_v3 FALSE \
+  --v2_cor_method bicor \
+  --v2_p_thresh 0.05
+
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/36-38wk_Methylation_complete.rds \
+  --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PCs.rds \
+  --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PC_Trait_Correlation_Stats_Bicor.tsv \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --run_v1 FALSE \
+  --run_v2 TRUE \
+  --run_v3 FALSE \
+  --v2_cor_method bicor \
+  --v2_p_thresh 0.05
+
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Postpartum_Methylation_complete.rds \
+  --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Postpartum/PCs.rds \
+  --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Postpartum/PC_Trait_Correlation_Stats_Bicor.tsv \
+  --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+  --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+  --run_v1 FALSE \
+  --run_v2 TRUE \
+  --run_v3 FALSE \
+  --v2_cor_method bicor \
+  --v2_p_thresh 0.05
+
+# script 08
+Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/08_softpower_consensus.R \
+  --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+  --dataset1_label Baseline \
+  --dataset1_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Baseline/v2_exclude_protected_pcs/Baseline_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+  --dataset2_label 36-38wk \
+  --dataset2_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/36-38wk/v2_exclude_protected_pcs/36-38wk_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+  --dataset3_label Postpartum \
+  --dataset3_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Postpartum/v2_exclude_protected_pcs/Postpartum_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+  --adjustment_version v2_exclude_protected_pcs \
+  --softpower_cor pearson \
+  --power_min 1 \
+  --power_max 20 \
+  --scale_free_cutoff 0.8

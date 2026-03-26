@@ -34,34 +34,66 @@
 # OUTPUTS
 #   <project_root>/comethyl_output/consensus/05_methylation_adjustment/<dataset_label>/<cpg_label>/<region_label>/
 #       v1_all_pcs/
-#         Adjusted_Region_Methylation_allPCs.rds
-#         adjustment_log.txt
+#         <dataset_label>_Adjusted_Region_Methylation_allPCs.rds
+#         <dataset_label>_Used_PCs.txt
+#         <dataset_label>_adjustment_log.txt
 #
 #       v2_exclude_protected_pcs/
-#         Adjusted_Region_Methylation_excluding_protected_PCs_<method>.rds
-#         Removed_Protected_PCs.txt
-#         Used_PCs.txt
-#         Removed_PCs_Associated_Traits.tsv
-#         adjustment_log.txt
+#         <dataset_label>_Adjusted_Region_Methylation_excluding_protected_PCs_<method>.rds
+#         <dataset_label>_Removed_Protected_PCs.txt
+#         <dataset_label>_Used_PCs.txt
+#         <dataset_label>_Removed_PCs_Associated_Traits.tsv
+#         <dataset_label>_adjustment_log.txt
 #
 #       v3_technical_pcs_only/
-#         Adjusted_Region_Methylation_technicalPCs_only.rds
-#         Used_Technical_PCs.txt
-#         Technical_PCs_Associated_Traits.tsv
-#         adjustment_log.txt
+#         <dataset_label>_Adjusted_Region_Methylation_technicalPCs_only.rds
+#         <dataset_label>_Used_Technical_PCs.txt
+#         <dataset_label>_Technical_PCs_Associated_Traits.tsv
+#         <dataset_label>_adjustment_log.txt
 #
 #       run_parameters.txt
 #       sessionInfo.txt
-#
-# NOTES
-#   - v1 runs by default.
-#   - v2 runs only if requested and protected traits are available.
-#   - v3 runs only if requested and technical traits are available.
-#   - No project-specific trait cleaning is done here.
-#   - This script should be run separately for each dataset/timepoint in the
-#     consensus workflow.
+
+# Example
+# Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+#   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+#   --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Baseline_Methylation_complete.rds \
+#   --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Baseline/PCs.rds \
+#   --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Baseline/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+#   --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+#   --run_v1 FALSE \
+#   --run_v2 TRUE \
+#   --run_v3 FALSE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
+
+# Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+#   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+#   --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/36-38wk_Methylation_complete.rds \
+#   --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PCs.rds \
+#   --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+#   --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+#   --run_v1 FALSE \
+#   --run_v2 TRUE \
+#   --run_v3 FALSE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
+
+# Rscript /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/scripts/comethyl_scripts/consensus/07_methylation_adjustment_consensus.R \
+#   --project_root /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo \
+#   --input_meth /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/Postpartum_Methylation_complete.rds \
+#   --input_pcs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Postpartum/PCs.rds \
+#   --pc_trait_stats /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/Postpartum/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt \
+#   --technical_traits_file /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt \
+#   --run_v1 FALSE \
+#   --run_v2 TRUE \
+#   --run_v3 FALSE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
 # ================================================================
-message("Starting ✓")
 
 suppressPackageStartupMessages({
   library(optparse)
@@ -189,20 +221,29 @@ if (opt$v3_p_thresh < 0 || opt$v3_p_thresh > 1) {
 
 # ------------------------------------------------------------
 # Derive output directory from methylation lineage
-# Expected input:
-#   .../consensus/03_region_methylation/<dataset_label>/<cpg_label>/<region_label>/Region_Methylation.rds
 # ------------------------------------------------------------
-input_dir <- dirname(opt$input_meth)
-region_label <- basename(input_dir)
-cpg_label <- basename(dirname(input_dir))
-dataset_label <- basename(dirname(dirname(input_dir)))
+input_filename <- basename(opt$input_meth)
+input_dir      <- dirname(opt$input_meth)
+
+if (grepl("05b_shared_complete_regions", input_dir)) {
+  dataset_label <- sub("_Methylation_complete\\.rds$", "", input_filename)
+  dataset_label <- sub("\\.rds$", "", dataset_label)
+  cpg_label     <- "05b_shared_complete"
+  region_label  <- "shared"
+} else {
+  region_label  <- basename(input_dir)
+  cpg_label     <- basename(dirname(input_dir))
+  dataset_label <- basename(dirname(dirname(input_dir)))
+}
 
 pipeline_root <- file.path(opt$project_root, "comethyl_output", "consensus")
-step_dir <- file.path(pipeline_root, "05_methylation_adjustment")
-out_dir <- file.path(step_dir, dataset_label, cpg_label, region_label)
+step_dir      <- file.path(pipeline_root, "07_methylation_adjustment")
+out_dir       <- file.path(step_dir, dataset_label)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
+message("Dataset label: ", dataset_label)
 message("Output directory: ", out_dir)
+
 
 # ------------------------------------------------------------
 # Load inputs
@@ -347,12 +388,28 @@ if (run_v1) {
   dir_v1 <- file.path(out_dir, "v1_all_pcs")
   dir.create(dir_v1, recursive = TRUE, showWarnings = FALSE)
 
-  v1_out <- file.path(dir_v1, "Adjusted_Region_Methylation_allPCs.rds")
+  v1_out <- file.path(
+    dir_v1,
+    paste0(dataset_label, "_Adjusted_Region_Methylation_allPCs.rds")
+  )
+  v1_used_pcs <- file.path(
+    dir_v1,
+    paste0(dataset_label, "_Used_PCs.txt")
+  )
+  v1_log <- file.path(
+    dir_v1,
+    paste0(dataset_label, "_adjustment_log.txt")
+  )
 
   methAdj_all <- adjustRegionMeth(
     meth,
     PCs = PCs,
     file = v1_out
+  )
+
+  write_vector_file(
+    colnames(PCs),
+    v1_used_pcs
   )
 
   write_log_lines(
@@ -366,10 +423,10 @@ if (run_v1) {
       paste("pcs_used:", paste(colnames(PCs), collapse = ", ")),
       paste("output_file:", v1_out)
     ),
-    file.path(dir_v1, "adjustment_log.txt")
+    v1_log
   )
 
-  message("✓ v1 complete: adjusted using all PCs (n = ", ncol(PCs), ")")
+  message("✓ v1 complete [", dataset_label, "]: adjusted using all PCs (n = ", ncol(PCs), ")")
 } else {
   message("Skipping v1 (run_v1 = FALSE)")
 }
@@ -381,15 +438,21 @@ if (run_v2) {
   dir_v2 <- file.path(out_dir, "v2_exclude_protected_pcs")
   dir.create(dir_v2, recursive = TRUE, showWarnings = FALSE)
 
+  log_v2 <- file.path(dir_v2, paste0(dataset_label, "_adjustment_log.txt"))
+  removed_pcs_file <- file.path(dir_v2, paste0(dataset_label, "_Removed_Protected_PCs.txt"))
+  used_pcs_file <- file.path(dir_v2, paste0(dataset_label, "_Used_PCs.txt"))
+  removed_traits_file <- file.path(dir_v2, paste0(dataset_label, "_Removed_PCs_Associated_Traits.tsv"))
+
   if (length(protected_resolved$found) == 0) {
     warning("Skipping v2: no protected traits were found.")
     write_log_lines(
       c(
         "mode: v2_exclude_protected_pcs",
         "status: skipped",
+        paste("dataset_label:", dataset_label),
         "reason: no protected traits found"
       ),
-      file.path(dir_v2, "adjustment_log.txt")
+      log_v2
     )
   } else {
     sig_protected <- pc_trait_stats_v2 %>%
@@ -405,15 +468,16 @@ if (run_v2) {
         c(
           "mode: v2_exclude_protected_pcs",
           "status: skipped",
+          paste("dataset_label:", dataset_label),
           "reason: all PCs removed after protected-trait filtering",
           paste("n_protected_pcs_removed:", length(protected_pcs_to_remove))
         ),
-        file.path(dir_v2, "adjustment_log.txt")
+        log_v2
       )
     } else {
       v2_out <- file.path(
         dir_v2,
-        paste0("Adjusted_Region_Methylation_excluding_protected_PCs_", v2_cor_method, ".rds")
+        paste0(dataset_label, "_Adjusted_Region_Methylation_excluding_protected_PCs_", v2_cor_method, ".rds")
       )
 
       methAdj_v2 <- adjustRegionMeth(
@@ -424,23 +488,23 @@ if (run_v2) {
 
       write_vector_file(
         protected_pcs_to_remove,
-        file.path(dir_v2, "Removed_Protected_PCs.txt")
+        removed_pcs_file
       )
 
       write_vector_file(
         colnames(PCs_v2),
-        file.path(dir_v2, "Used_PCs.txt")
+        used_pcs_file
       )
 
       if (nrow(sig_protected) > 0) {
         readr::write_tsv(
           sig_protected %>% dplyr::arrange(PC, p),
-          file.path(dir_v2, "Removed_PCs_Associated_Traits.tsv")
+          removed_traits_file
         )
       } else {
         readr::write_tsv(
           data.frame(PC = character(0), trait = character(0), effect = numeric(0), p = numeric(0)),
-          file.path(dir_v2, "Removed_PCs_Associated_Traits.tsv")
+          removed_traits_file
         )
       }
 
@@ -462,10 +526,10 @@ if (run_v2) {
           paste("pcs_used:", paste(colnames(PCs_v2), collapse = ", ")),
           paste("output_file:", v2_out)
         ),
-        file.path(dir_v2, "adjustment_log.txt")
+        log_v2
       )
 
-      message("✓ v2 complete: removed ", length(protected_pcs_to_remove),
+      message("✓ v2 complete [", dataset_label, "]: removed ", length(protected_pcs_to_remove),
               " protected-associated PCs; used ", ncol(PCs_v2), " PCs")
     }
   }
@@ -480,15 +544,33 @@ if (run_v3) {
   dir_v3 <- file.path(out_dir, "v3_technical_pcs_only")
   dir.create(dir_v3, recursive = TRUE, showWarnings = FALSE)
 
+  v3_out <- file.path(
+    dir_v3,
+    paste0(dataset_label, "_Adjusted_Region_Methylation_technicalPCs_only.rds")
+  )
+  v3_used_pcs <- file.path(
+    dir_v3,
+    paste0(dataset_label, "_Used_Technical_PCs.txt")
+  )
+  v3_traits_file <- file.path(
+    dir_v3,
+    paste0(dataset_label, "_Technical_PCs_Associated_Traits.tsv")
+  )
+  v3_log <- file.path(
+    dir_v3,
+    paste0(dataset_label, "_adjustment_log.txt")
+  )
+
   if (length(technical_resolved$found) == 0) {
     warning("Skipping v3: no technical traits were found.")
     write_log_lines(
       c(
         "mode: v3_technical_pcs_only",
         "status: skipped",
+        paste("dataset_label:", dataset_label),
         "reason: no technical traits found"
       ),
-      file.path(dir_v3, "adjustment_log.txt")
+      v3_log
     )
   } else {
     sig_technical <- pc_trait_stats_for_v3 %>%
@@ -504,14 +586,14 @@ if (run_v3) {
         c(
           "mode: v3_technical_pcs_only",
           "status: skipped",
+          paste("dataset_label:", dataset_label),
           paste("v3_p_thresh:", opt$v3_p_thresh),
           "reason: no PCs selected by technical-trait filtering"
         ),
-        file.path(dir_v3, "adjustment_log.txt")
+        v3_log
       )
     } else {
       PCs_v3 <- PCs[, technical_pcs_to_use, drop = FALSE]
-      v3_out <- file.path(dir_v3, "Adjusted_Region_Methylation_technicalPCs_only.rds")
 
       methAdj_v3 <- adjustRegionMeth(
         meth,
@@ -521,18 +603,18 @@ if (run_v3) {
 
       write_vector_file(
         colnames(PCs_v3),
-        file.path(dir_v3, "Used_Technical_PCs.txt")
+        v3_used_pcs
       )
 
       if (nrow(sig_technical) > 0) {
         readr::write_tsv(
           sig_technical %>% dplyr::arrange(PC, p),
-          file.path(dir_v3, "Technical_PCs_Associated_Traits.tsv")
+          v3_traits_file
         )
       } else {
         readr::write_tsv(
           data.frame(PC = character(0), trait = character(0), effect = numeric(0), p = numeric(0)),
-          file.path(dir_v3, "Technical_PCs_Associated_Traits.tsv")
+          v3_traits_file
         )
       }
 
@@ -551,10 +633,10 @@ if (run_v3) {
           paste("technical_pcs_used:", paste(colnames(PCs_v3), collapse = ", ")),
           paste("output_file:", v3_out)
         ),
-        file.path(dir_v3, "adjustment_log.txt")
+        v3_log
       )
 
-      message("✓ v3 complete: used ", ncol(PCs_v3), " technical-associated PCs")
+      message("✓ v3 complete [", dataset_label, "]: used ", ncol(PCs_v3), " technical-associated PCs")
     }
   }
 } else {

@@ -175,53 +175,70 @@ choose_consensus_power <- function(summary_df, cutoff = 0.8) {
   list(power = chosen, reason = reason, summary = power_summary)
 }
 
-make_combined_softpower_plot <- function(summary_df, out_file, cutoff = 0.8) {
-  p1 <- ggplot(summary_df, aes(x = Power, y = SFT_R2, color = Dataset, group = Dataset)) +
+make_combined_softpower_plot <- function(summary_df, out_file, cutoff = 0.8,
+                                         chosen_power = NULL) {
+  p1 <- ggplot(summary_df, aes(x = Power, y = SFT_R2,
+                                color = Dataset, group = Dataset)) +
     geom_line() +
     geom_point() +
-    geom_hline(yintercept = cutoff, linetype = "dashed") +
+    geom_text(aes(label = Power), vjust = -0.7, size = 2.8, show.legend = FALSE) +
+    geom_hline(yintercept = cutoff, linetype = "dashed", color = "black") +
+    { if (!is.null(chosen_power))
+        geom_vline(xintercept = chosen_power, linetype = "dotted",
+                   color = "black", linewidth = 0.8) } +
+    { if (!is.null(chosen_power))
+        annotate("text", x = chosen_power + 0.3,
+                 y = 0.05, label = paste0("power = ", chosen_power),
+                 hjust = 0, size = 3.5) } +
+    scale_x_continuous(breaks = unique(summary_df$Power)) +
     theme_bw(base_size = 12) +
     theme(panel.grid = element_blank()) +
     labs(
       title = "Consensus Soft-Threshold Selection",
-      x = "Soft Threshold (Power)",
-      y = "Scale-Free Topology Model Fit (R²)"
+      x     = "Soft Threshold (Power)",
+      y     = "Scale-Free Topology Model Fit (R\u00b2)"
     )
 
-  p2 <- ggplot(summary_df, aes(x = Power, y = Mean_Connectivity, color = Dataset, group = Dataset)) +
+  p2 <- ggplot(summary_df, aes(x = Power, y = Mean_Connectivity,
+                                color = Dataset, group = Dataset)) +
     geom_line() +
     geom_point() +
+    scale_x_continuous(breaks = unique(summary_df$Power)) +
     theme_bw(base_size = 12) +
     theme(panel.grid = element_blank()) +
     labs(
       title = "Mean Connectivity",
-      x = "Soft Threshold (Power)",
-      y = "Mean Connectivity"
+      x     = "Soft Threshold (Power)",
+      y     = "Mean Connectivity"
     )
 
-  p3 <- ggplot(summary_df, aes(x = Power, y = Median_Connectivity, color = Dataset, group = Dataset)) +
+  p3 <- ggplot(summary_df, aes(x = Power, y = Median_Connectivity,
+                                color = Dataset, group = Dataset)) +
     geom_line() +
     geom_point() +
+    scale_x_continuous(breaks = unique(summary_df$Power)) +
     theme_bw(base_size = 12) +
     theme(panel.grid = element_blank()) +
     labs(
       title = "Median Connectivity",
-      x = "Soft Threshold (Power)",
-      y = "Median Connectivity"
+      x     = "Soft Threshold (Power)",
+      y     = "Median Connectivity"
     )
 
-  p4 <- ggplot(summary_df, aes(x = Power, y = Max_Connectivity, color = Dataset, group = Dataset)) +
+  p4 <- ggplot(summary_df, aes(x = Power, y = Max_Connectivity,
+                                color = Dataset, group = Dataset)) +
     geom_line() +
     geom_point() +
+    scale_x_continuous(breaks = unique(summary_df$Power)) +
     theme_bw(base_size = 12) +
     theme(panel.grid = element_blank()) +
     labs(
       title = "Max Connectivity",
-      x = "Soft Threshold (Power)",
-      y = "Max Connectivity"
+      x     = "Soft Threshold (Power)",
+      y     = "Max Connectivity"
     )
 
-  grDevices::pdf(out_file, width = 10, height = 8)
+  grDevices::pdf(out_file, width = 14, height = 10)
   gridExtra::grid.arrange(p1, p2, p3, p4, ncol = 2)
   dev.off()
 }
@@ -277,7 +294,7 @@ WGCNA::enableWGCNAThreads(nThreads = opt$threads)
 # Output directory
 # ------------------------------------------------------------
 pipeline_root <- file.path(opt$project_root, "comethyl_output", "consensus")
-step_dir <- file.path(pipeline_root, "06_soft_power")
+step_dir <- file.path(pipeline_root, "08_soft_power")
 out_dir <- file.path(step_dir, opt$adjustment_version)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -401,9 +418,10 @@ if (!requireNamespace("gridExtra", quietly = TRUE)) {
   warning("gridExtra not installed; skipping combined softpower PDF.")
 } else {
   make_combined_softpower_plot(
-    summary_df = combined_summary,
-    out_file = file.path(out_dir, "Consensus_SoftPower_Combined.pdf"),
-    cutoff = opt$scale_free_cutoff
+  summary_df   = combined_summary,
+  out_file     = file.path(out_dir, paste0("Consensus_SoftPower_Combined_", softpower_cor, ".pdf")),
+  cutoff       = opt$scale_free_cutoff,
+  chosen_power = chosen$power
   )
 }
 

@@ -269,148 +269,213 @@ resolveTraits <- function(requested_traits,
 #      - keep top_n_traits traits
 #      - plot all PCs against those traits
 # ------------------------------------------------------------
-plotPCTrait <- function(pc_trait_stats,
-                        output_file,
-                        cor_column = c("bicor", "cor"),
-                        p_column = "p",
-                        mode = c("selected_traits", "top_cells", "top_traits"),
-                        selected_traits = NULL,
-                        top_n_cells = 250,
-                        top_n_traits = 50,
-                        cluster_traits = FALSE,
-                        cluster_pcs = FALSE,
-                        title = NULL,
-                        base_size = 11,
-                        axis_text_size = 8,
-                        width = 12,
-                        height = 10,
-                        dpi = 600,
-                        verbose = TRUE) {
-  cor_column <- match.arg(cor_column)
-  mode <- match.arg(mode)
+plotPCTrait <- function(MEtraitCor,
+                               moduleOrder = 1:length(unique(MEtraitCor$module)),
+                               traitOrder  = 1:length(unique(MEtraitCor$trait)),
 
-  df <- .standardize_pc_trait_table(
-    pc_trait_stats = pc_trait_stats,
-    cor_column = cor_column,
-    p_column = p_column
-  )
+                               subsetTraits = NULL,
+                               topCells = NULL,
+                               p_cut = 0.05,
 
-  if (mode == "selected_traits") {
-    if (is.null(selected_traits) || length(selected_traits) == 0) {
-      stop("selected_traits mode requires non-empty selected_traits.")
-    }
+                               label_mode = c("star", "p", "none"),
+                               label.size = 8,
+                               label.nudge_y = 0,
 
-    selected_traits <- unique(as.character(selected_traits))
-    df <- df %>% dplyr::filter(trait %in% selected_traits)
+                               maxXLabels = 40,
+                               maxYLabels = 80,
+                               force_x_labels = FALSE,   # NEW
+                               force_y_labels = FALSE,   # NEW
+                               wrapY = 30,
 
-    if (nrow(df) == 0) {
-      stop("No rows remain after filtering to selected_traits.")
-    }
+                               colors = WGCNA::blueWhiteRed(100, gamma = 0.9),
+                               limit = NULL,
 
-    plot_subtitle <- paste0(
-      "Selected traits (n = ",
-      length(unique(df$trait)),
-      ")"
+                               base_size = 11,
+                               axis.text.size = 8,
+                               legend.text.size = 9,
+                               legend.title.size = 10,
+                               legend.position = "right",
+
+                               showColorBar = TRUE,
+                               showColorBarLabels = TRUE,
+                               colorBarLabelPos = c("inside","below"),
+                               colorBarLabelSize = 2.8,
+                               colorBarLabelAngle = 90,
+                               colorBarRelHeight = 0.10,
+                               colColorMargins = c(-0.7, 4.21, 1.2, 11.07),
+                               syncWidths = TRUE,
+                               autoContrastLabels = TRUE,
+
+                               save = TRUE,
+                               file = "Heatmap.pdf",
+                               autoSize = TRUE,
+                               cell_in = 0.16,
+                               min_width = 6,
+                               min_height = 5,
+                               max_width = 11,
+                               max_height = 11,
+                               width = 8,
+                               height = 7,
+                               dpi = 600,
+                               verbose = TRUE) {
+
+  label_mode <- match.arg(label_mode)
+  colorBarLabelPos <- match.arg(colorBarLabelPos)
+
+  stopifnot(all(c("module","trait","p") %in% colnames(MEtraitCor)))
+
+  corType <- if ("bicor" %in% colnames(MEtraitCor)) "bicor" else if ("cor" %in% colnames(MEtraitCor)) "cor" else
+    stop("[plotMEtraitCor_pub] Need 'cor' or 'bicor' column")
+
+  if (verbose) message("[plotMEtraitCor_pub] corType = ", corType)
+
+  if (!is.null(subsetTraits)) {
+    MEtraitCor <- MEtraitCor[MEtraitCor$trait %in% subsetTraits, , drop = FALSE]
+  }
+
+  if (!is.null(topCells)) {
+    MEtraitCor <- MEtraitCor[order(MEtraitCor$p), , drop = FALSE]
+    MEtraitCor <- head(MEtraitCor, topCells)
+  }
+
+  # --- safer/stable releveling ---
+  mod_levels <- unique(as.character(MEtraitCor$module))
+  trt_levels <- unique(as.character(MEtraitCor$trait))
+
+  moduleOrder <- moduleOrder[moduleOrder <= length(mod_levels)]
+  traitOrder  <- traitOrder[traitOrder  <= length(trt_levels)]
+
+  MEtraitCor$module <- factor(MEtraitCor$module, levels = mod_levels[moduleOrder])
+  MEtraitCor$trait  <- factor(MEtraitCor$trait,  levels = trt_levels[rev(traitOrder)])
+
+  MEtraitCor$significant <- (MEtraitCor$p < p_cut) & !is.na(MEtraitCor$p)
+
+  if (wrapY > 0) {
+    MEtraitCor$trait <- factor(
+      stringr::str_wrap(as.character(MEtraitCor$trait), width = wrapY),
+      levels = stringr::str_wrap(levels(MEtraitCor$trait), width = wrapY)
+    )
+  }
+
+  corData <- MEtraitCor[[corType]]
+  if (is.null(limit)) limit <- max(abs(corData), na.rm = TRUE)
+  titleName <- paste0(toupper(substring(corType, 1, 1)), substring(corType, 2))
+
+  nX <- length(levels(MEtraitCor$module))
+  nY <- length(levels(MEtraitCor$trait))
+
+  if (autoSize) {
+    width  <- max(min_width,  min(max_width,  nX * cell_in + 2.5))
+    height <- max(min_height, min(max_height, nY * cell_in + 2.5))
+    if (verbose) message(sprintf("[plotMEtraitCor_pub] autoSize -> width=%.2f, height=%.2f (nX=%d,nY=%d)",
+                                 width, height, nX, nY))
+  }
+
+  # NEW: override suppression when you *need* labels (PCs)
+  show_x_labels <- force_x_labels || (nX <= maxXLabels)
+  show_y_labels <- force_y_labels || (nY <= maxYLabels)
+
+  heatmap <- ggplot2::ggplot(MEtraitCor, ggplot2::aes(x = module, y = trait)) +
+    ggplot2::geom_tile(ggplot2::aes(fill = corData), linewidth = 0) +
+    ggplot2::scale_fill_gradientn(titleName, colors = colors, limits = c(-limit, limit)) +
+    ggplot2::theme_bw(base_size = base_size) +
+    ggplot2::theme(
+      axis.title = ggplot2::element_blank(),
+      axis.text.x = if (show_x_labels) ggplot2::element_text(size = axis.text.size, angle = 90, vjust = 0.5) else ggplot2::element_blank(),
+      axis.text.y = if (show_y_labels) ggplot2::element_text(size = axis.text.size) else ggplot2::element_blank(),
+      axis.ticks.x = if (show_x_labels) ggplot2::element_line() else ggplot2::element_blank(),
+      axis.ticks.y = if (show_y_labels) ggplot2::element_line() else ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank(),
+      legend.position = legend.position,
+      legend.text  = ggplot2::element_text(size = legend.text.size),
+      legend.title = ggplot2::element_text(size = legend.title.size)
     )
 
-  } else if (mode == "top_cells") {
-    df <- df %>%
-      dplyr::arrange(p) %>%
-      dplyr::slice_head(n = top_n_cells)
+  if (label_mode != "none") {
+    if (label_mode == "p") {
+      heatmap <- heatmap +
+        ggplot2::geom_text(
+          ggplot2::aes(label = ifelse(significant, format(p, digits = 1, scientific = TRUE), "")),
+          size = label.size, nudge_y = label.nudge_y
+        )
+    } else {
+      heatmap <- heatmap +
+        ggplot2::geom_text(
+          ggplot2::aes(label = ifelse(significant, "*", "")),
+          size = label.size, nudge_y = label.nudge_y
+        )
+    }
+  }
 
-    if (nrow(df) == 0) {
-      stop("No rows remain after selecting top_n_cells.")
+  # module color strip (unchanged)
+  uniqMods   <- levels(MEtraitCor$module)
+  colModules <- all(uniqMods %in% grDevices::colors())
+
+  colColors <- NULL
+  if (colModules && showColorBar) {
+    dfBar <- data.frame(module = factor(uniqMods, levels = uniqMods), y = 1)
+
+    if (showColorBarLabels) {
+      if (autoContrastLabels) {
+        lum <- function(cols) {
+          rgb <- grDevices::col2rgb(cols) / 255
+          drop(0.2126 * rgb[1, ] + 0.7152 * rgb[2, ] + 0.0722 * rgb[3, ])
+        }
+        dfBar$labcol <- ifelse(lum(as.character(dfBar$module)) > 0.5, "black", "white")
+      } else dfBar$labcol <- "black"
     }
 
-    plot_subtitle <- paste0(
-      "Top ",
-      min(top_n_cells, nrow(df)),
-      " PC-trait associations by p-value"
-    )
+    baseBar <- ggplot2::ggplot(dfBar, ggplot2::aes(x = module, y = y, fill = module)) +
+      ggplot2::geom_tile(width = 0.98, height = 0.8) +
+      ggplot2::scale_fill_identity() +
+      ggplot2::scale_x_discrete(expand = c(0, 0)) +
+      ggplot2::coord_cartesian(clip = "off") +
+      ggplot2::theme_void() +
+      ggplot2::theme(legend.position = "none",
+                     plot.margin = grid::unit(colColorMargins, "lines"))
 
-  } else if (mode == "top_traits") {
-    top_traits <- df %>%
-      dplyr::group_by(trait) %>%
-      dplyr::summarise(min_p = min(p, na.rm = TRUE), .groups = "drop") %>%
-      dplyr::arrange(min_p) %>%
-      dplyr::slice_head(n = top_n_traits) %>%
-      dplyr::pull(trait)
-
-    df <- df %>% dplyr::filter(trait %in% top_traits)
-
-    if (nrow(df) == 0) {
-      stop("No rows remain after selecting top_n_traits.")
+    if (showColorBarLabels) {
+      if (colorBarLabelPos == "inside") {
+        baseBar <- baseBar +
+          ggplot2::geom_text(ggplot2::aes(label = as.character(module), colour = labcol),
+                             angle = colorBarLabelAngle, vjust = 0.5, size = colorBarLabelSize) +
+          ggplot2::scale_colour_identity()
+      } else {
+        baseBar <- baseBar +
+          ggplot2::geom_text(ggplot2::aes(y = 0.05, label = as.character(module), colour = labcol),
+                             angle = 0, vjust = 1, size = colorBarLabelSize) +
+          ggplot2::scale_colour_identity() +
+          ggplot2::ylim(0, 1.35)
+      }
     }
 
-    plot_subtitle <- paste0(
-      "Top ",
-      min(top_n_traits, length(unique(df$trait))),
-      " traits ranked by minimum p-value across PCs"
-    )
+    colColors <- baseBar
   }
 
-  # Pivot to matrices for optional clustering
-  effect_wide <- reshape2::dcast(df, trait ~ PC, value.var = "effect")
-  rownames(effect_wide) <- effect_wide$trait
-  effect_wide$trait <- NULL
-  effect_mat <- as.matrix(effect_wide)
-
-  trait_levels <- rownames(effect_mat)
-  pc_levels <- colnames(effect_mat)
-
-  if (cluster_traits && nrow(effect_mat) > 1) {
-    trait_levels <- rownames(effect_mat)[stats::hclust(stats::dist(effect_mat))$order]
+  combined <- heatmap
+  if (!is.null(colColors)) {
+    if (syncWidths) {
+      g_heat  <- ggplot2::ggplotGrob(heatmap)
+      g_strip <- ggplot2::ggplotGrob(colColors)
+      g_strip$widths <- g_heat$widths
+      combined <- gridExtra::arrangeGrob(
+        g_heat, g_strip, ncol = 1,
+        heights = grid::unit.c(grid::unit(1, "null"),
+                               grid::unit(colorBarRelHeight, "null"))
+      )
+    } else {
+      combined <- cowplot::plot_grid(heatmap, colColors, nrow = 2,
+                                     rel_heights = c(1, colorBarRelHeight))
+    }
   }
 
-  if (cluster_pcs && ncol(effect_mat) > 1) {
-    pc_levels <- colnames(effect_mat)[stats::hclust(stats::dist(t(effect_mat)))$order]
+  if (save) {
+    dir.create(dirname(file), recursive = TRUE, showWarnings = FALSE)
+    ggplot2::ggsave(filename = file, plot = combined, dpi = dpi,
+                    width = width, height = height, units = "in", limitsize = FALSE)
   }
 
-  df$trait <- factor(df$trait, levels = rev(trait_levels))
-  df$PC <- factor(df$PC, levels = pc_levels)
-
-  if (is.null(title)) {
-    title <- paste0("PC-Trait Heatmap (", cor_column, ")")
-  }
-
-  plt <- ggplot(df, aes(x = PC, y = trait, fill = effect)) +
-    geom_tile() +
-    scale_fill_gradient2(
-      low = muted("blue"),
-      mid = "white",
-      high = muted("red"),
-      midpoint = 0,
-      name = cor_column
-    ) +
-    theme_bw(base_size = base_size) +
-    theme(
-      axis.title = element_blank(),
-      axis.text.x = element_text(size = axis_text_size, angle = 90, vjust = 0.5, hjust = 1),
-      axis.text.y = element_text(size = axis_text_size),
-      panel.grid = element_blank()
-    ) +
-    labs(
-      title = title,
-      subtitle = plot_subtitle
-    )
-
-  dir.create(dirname(output_file), recursive = TRUE, showWarnings = FALSE)
-
-  ggplot2::ggsave(
-    filename = output_file,
-    plot = plt,
-    width = width,
-    height = height,
-    dpi = dpi,
-    units = "in",
-    limitsize = FALSE
-  )
-
-  if (verbose) {
-    message("[plotPCTrait] Saved: ", output_file)
-  }
-
-  return(invisible(plt))
+  return(combined)
 }
 
 # ------------------------------------------------------------

@@ -1,0 +1,26 @@
+Region coverage summary
+Date: 2026-03-25 23:22:33.366508
+
+Datasets processed: Baseline, 36-38wk, Postpartum
+
+Baseline:
+  Total regions in input matrix:          11288
+  Regions shared across all datasets:     11288
+  Complete (NA-free) regions in dataset:  11288
+  Final shared complete regions retained: 11243
+  Regions removed (NA or not shared):     45
+
+36-38wk:
+  Total regions in input matrix:          11288
+  Regions shared across all datasets:     11288
+  Complete (NA-free) regions in dataset:  11260
+  Final shared complete regions retained: 11243
+  Regions removed (NA or not shared):     45
+
+Postpartum:
+  Total regions in input matrix:          11288
+  Regions shared across all datasets:     11288
+  Complete (NA-free) regions in dataset:  11266
+  Final shared complete regions retained: 11243
+  Regions removed (NA or not shared):     45
+
