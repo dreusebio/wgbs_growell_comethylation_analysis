@@ -1,0 +1,15 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+dataset_label: Baseline
+input_regions: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/01_reference_filter_regions/Baseline/cov3_75pct/Regions.txt
+input_label: cov3_75pct
+cov_min: 4
+meth_sd: 0.05
+base_size: 22
+bins: 40
+max_q: 0.99
+width: 20
+height: 10
+n_regions_before: 35554
+n_regions_after: 11288
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/02_reference_region_filter/Baseline/cov3_75pct/covMin4_methSD0p05
+date: 2026-03-25 15:58:43.593036

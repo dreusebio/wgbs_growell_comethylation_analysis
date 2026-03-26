@@ -1,0 +1,9 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+dataset_label: Baseline
+meta_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx
+cyto_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Baseline/cytosine_reports
+workers: 8
+n_metadata_samples: 43
+n_detected_cpg_report_files: 43
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/00_cpg_extraction/Baseline
+date: 2026-03-25 14:42:43.90849

@@ -1,0 +1,10 @@
+dataset_label: Postpartum
+meta_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/sample_info.xlsx
+cyto_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Postpartum/cytosine_reports
+cov: 1
+per_sample: 0.01
+n_unfiltered_cpgs: 634646
+n_aligned_to_reference_cpgs: 522032
+n_filtered_cpgs: 522032
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/04_align_to_reference_cpgs/Postpartum
+date: 2026-03-25 16:22:18.604827

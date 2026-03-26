@@ -1,0 +1,29 @@
+=== RENAME Unique_Aliquot_ID -> User_ID (DRY RUN) ===
+Excel: /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis/metadata/Sample_names_GROWELL.xlsx
+Root:  /quobyte/lasallegrp/projects/wgbs_growell_dmr_analysis/data/processed/08_cytosine_reports
+Folders considered: Baseline, 36-38wk, Postpartum
+
+No files found matching '^\d{6}_' that also exist in mapping.
+
+=== SET DIFF REPORT (predicted after rename; by User_ID) ===
+Folders: Baseline, 36-38wk, Postpartum
+Union size across all folders: 43
+
+[Baseline] unique samples: 43 (expected 49)
+  Missing vs union: none
+
+[36-38wk] unique samples: 43 (expected 49)
+  Missing vs union: none
+
+[Postpartum] unique samples: 43 (expected 49)
+  Missing vs union: none
+
+=== PAIRWISE DIFFERENCES ===
+Baseline \ 36-38wk (in Baseline not 36-38wk): 0
+36-38wk \ Baseline (in 36-38wk not Baseline): 0
+
+Baseline \ Postpartum (in Baseline not Postpartum): 0
+Postpartum \ Baseline (in Postpartum not Baseline): 0
+
+36-38wk \ Postpartum (in 36-38wk not Postpartum): 0
+Postpartum \ 36-38wk (in Postpartum not 36-38wk): 0

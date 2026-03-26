@@ -1,0 +1,11 @@
+dataset_label: 36-38wk
+input_bs: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/04_align_to_reference_cpgs/36-38wk/Filtered_BSseq.rds
+reference_regions: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/02_reference_region_filter/Baseline/cov3_75pct/covMin4_methSD0p05/Filtered_Regions.rds
+cpg_label: 36-38wk
+region_label: covMin4_methSD0p05
+n_reference_regions: 11288
+n_matrix_regions: 11288
+n_samples: 43
+region_count_matches_reference: TRUE
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/36-38wk/36-38wk/covMin4_methSD0p05
+date: 2026-03-25 16:31:20.391348

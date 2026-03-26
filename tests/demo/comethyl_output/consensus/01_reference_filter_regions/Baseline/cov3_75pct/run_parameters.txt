@@ -1,0 +1,9 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+dataset_label: Baseline
+input_rds: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/00_cpg_extraction/Baseline/Unfiltered_BSseq.rds
+cov: 3
+per_sample: 0.75
+n_filtered_cpgs: 522032
+n_regions: 35554
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/01_reference_filter_regions/Baseline/cov3_75pct
+date: 2026-03-25 15:01:18.070656

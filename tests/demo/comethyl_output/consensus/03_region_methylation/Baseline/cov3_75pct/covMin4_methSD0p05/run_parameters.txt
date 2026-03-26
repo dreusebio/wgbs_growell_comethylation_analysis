@@ -1,0 +1,10 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+dataset_label: Baseline
+input_bs: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/01_reference_filter_regions/Baseline/cov3_75pct/Filtered_BSseq.rds
+input_regions: //quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/02_reference_region_filter/Baseline/cov3_75pct/covMin4_methSD0p05/Filtered_Regions.rds
+cpg_label: cov3_75pct
+region_label: covMin4_methSD0p05
+n_regions: 11288
+n_samples: 43
+output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/Baseline/cov3_75pct/covMin4_methSD0p05
+date: 2026-03-25 16:14:18.095212
