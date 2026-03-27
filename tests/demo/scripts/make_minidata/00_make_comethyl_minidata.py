@@ -23,22 +23,22 @@ This script streams gz files line-by-line.
 Example of usage
 python scripts/make_minidata/00_make_comethyl_minidata.py \
   --input_dir data/processed/08_cytosine_reports/Baseline \
-  --output_dir data/demo/comethyl_minidata/Baseline \
-  --sample_list data/demo/comethyl_minidata/sample_ids.txt \
+  --output_dir data/demo/data/processed/Baseline \
+  --sample_list data/demo/data/processed/sample_ids.txt \
   --keep_chr chr22 \
   --dry_run
 
 python scripts/make_minidata/00_make_comethyl_minidata.py \
   --input_dir data/processed/08_cytosine_reports/36-38wk \
-  --output_dir data/demo/comethyl_minidata/36-38wk \
-  --sample_list data/demo/comethyl_minidata/sample_ids.txt \
+  --output_dir data/demo/data/processed/36-38wk \
+  --sample_list data/demo/data/processed/sample_ids.txt \
   --keep_chr chr22 \
   --dry_run
 
 python scripts/make_minidata/00_make_comethyl_minidata.py \
   --input_dir data/processed/08_cytosine_reports/Postpartum \
-  --output_dir data/demo/comethyl_minidata/Postpartum \
-  --sample_list data/demo/comethyl_minidata/sample_ids.txt \
+  --output_dir data/demo/data/processed/Postpartum \
+  --sample_list data/demo/data/processed/sample_ids.txt \
   --keep_chr chr22 \
   --dry_run
 """
