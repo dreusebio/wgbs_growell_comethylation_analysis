@@ -49,7 +49,7 @@
 #   --cov 3 \
 #   --per_sample 0.75
 
-message("Starting ✓")
+message("Starting Script 1 ✓")
 
 # ================================================================
 

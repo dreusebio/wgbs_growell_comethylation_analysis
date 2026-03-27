@@ -94,8 +94,7 @@
 #   --v2_cor_method bicor \
 #   --v2_p_thresh 0.05
 # ================================================================
-message("Starting \u2713")
-
+message("Starting Script 7 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(comethyl)

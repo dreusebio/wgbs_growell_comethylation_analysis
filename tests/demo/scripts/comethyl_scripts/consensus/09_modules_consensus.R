@@ -25,8 +25,7 @@
 #           <dataset_label>_Consensus_MEs.csv
 #           <dataset_label>_Consensus_Module_Eigengene_Dendrogram.pdf
 # ================================================================
-message("Starting \u2713")
-
+message("Starting Script 9 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(WGCNA)

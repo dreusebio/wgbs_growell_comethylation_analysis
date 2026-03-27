@@ -60,8 +60,7 @@
 #   --dataset3_label Postpartum \
 #   --dataset3_meth /quobyte/.../03_region_methylation/Postpartum/Postpartum/covMin4_methSD0p05/Region_Methylation.rds
 # ================================================================
-message("Starting \u2713")
-
+message("Starting Script 5b ✓")
 suppressPackageStartupMessages({
   library(optparse)
 })

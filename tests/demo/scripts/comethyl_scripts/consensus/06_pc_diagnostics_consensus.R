@@ -120,8 +120,7 @@
 #   --selected_trait_mode   protected
 # ================================================================
 
-message("Starting \u2713")
-
+message("Starting Script 6 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(WGCNA)

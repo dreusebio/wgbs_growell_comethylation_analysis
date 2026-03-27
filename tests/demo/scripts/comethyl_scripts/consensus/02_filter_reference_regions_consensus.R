@@ -65,7 +65,7 @@
 #   --covMin 4 \
 #   --methSD 0.08
 # ================================================================
-message("Starting ✓")
+message("Starting Script 2 ✓")
 
 suppressPackageStartupMessages({
   library(optparse)

@@ -62,7 +62,7 @@
 #   --cyto_dir /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_minidata/Postpartum/cytosine_reports \
 #   --workers 8
 
-message("Starting ✓")
+message("Starting Script 0 ✓")
 # ================================================================
 
 suppressPackageStartupMessages({

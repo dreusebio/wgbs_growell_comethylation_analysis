@@ -54,8 +54,7 @@
 #   --dataset2_bs /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/04_align_to_reference_cpgs/Postpartum/Filtered_BSseq.rds
 
 # ================================================================
-message("Starting ✓")
-
+message("Starting Script 5 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(comethyl)

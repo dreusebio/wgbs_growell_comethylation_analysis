@@ -13,8 +13,7 @@
 #   - Save per-dataset sample x module eigengene heatmaps
 #   - Save module-module correlation stats tables
 # ================================================================
-message("Starting \u2713")
-
+message("Starting Script 10 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(WGCNA)

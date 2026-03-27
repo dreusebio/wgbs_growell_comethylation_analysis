@@ -49,8 +49,7 @@
 #   --input_regions //quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/02_reference_region_filter/Baseline/cov3_75pct/covMin4_methSD0p05/Filtered_Regions.rds
 
 # ================================================================
-message("Starting ✓")
-
+message("Starting Script 3 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(comethyl)

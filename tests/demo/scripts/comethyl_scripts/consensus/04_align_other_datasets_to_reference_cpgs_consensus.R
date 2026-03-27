@@ -73,8 +73,7 @@
 #   --workers 8  
 
 # ================================================================
-message("Starting ✓")
-
+message("Starting Script 4 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(openxlsx)

@@ -10,8 +10,7 @@
 #   - Save membership tables for each dataset
 # ================================================================
 
-message("Starting \u2713")
-
+message("Starting Script 11 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(WGCNA)

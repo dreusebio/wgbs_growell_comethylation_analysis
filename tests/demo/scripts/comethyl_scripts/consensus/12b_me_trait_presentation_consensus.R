@@ -9,7 +9,7 @@
 #   - Generate comparison-ready heatmaps per trait set across datasets
 # ================================================================
 
-message("Starting Script 12B ✓")
+message("Starting Script 12b ✓")
 
 suppressPackageStartupMessages({
   library(optparse)

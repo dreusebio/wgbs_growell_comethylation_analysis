@@ -69,8 +69,7 @@
 #   --power_max 20 \
 #   --scale_free_cutoff 0.8
 # ================================================================
-message("Starting ✓")
-
+message("Starting Script 8 ✓")
 suppressPackageStartupMessages({
   library(optparse)
   library(WGCNA)

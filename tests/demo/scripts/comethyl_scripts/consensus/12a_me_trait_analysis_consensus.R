@@ -12,7 +12,7 @@
 #   - Save full and top heatmaps per dataset
 # ================================================================
 
-message("Starting Script 12A ✓")
+message("Starting Script 12a ✓")
 
 suppressPackageStartupMessages({
   library(optparse)
