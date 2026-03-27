@@ -1,0 +1,9 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+consensus_modules_rds: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/09_consensus_modules/v2_exclude_protected_pcs/shared/Consensus_Modules.rds
+adjustment_version: v2_exclude_protected_pcs
+datasets: Baseline, 36-38wk, Postpartum
+set_files: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/01_demographic_and_basic_information.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/02_parental_and_socioeconomic_information.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/03_smoking_and_environmental_exposures.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/04_dietary_information.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/05_physical_activity.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/06_psychological_measures.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/07_covid_related_information.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/08_infant_information.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/09_tasks_and_goals.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/protected_traits.txt, /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/technical_traits.txt
+module_dendro_distance: bicor
+p_thresh: 0.05
+top_n: 50
+date: 2026-03-26 18:03:39.934122

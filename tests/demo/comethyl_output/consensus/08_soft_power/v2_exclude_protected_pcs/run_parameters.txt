@@ -18,4 +18,4 @@ scale_free_cutoff: 0.8
 chosen_power: 20
 chosen_reason: smallest power where all datasets meet scale-free cutoff
 n_datasets: 3
-date: 2026-03-26 11:03:44.60623
+date: 2026-03-26 14:54:52.549033

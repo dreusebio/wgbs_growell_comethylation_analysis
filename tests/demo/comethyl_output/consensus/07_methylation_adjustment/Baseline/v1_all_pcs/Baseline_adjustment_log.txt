@@ -1,0 +1,8 @@
+mode: v1_all_pcs
+status: completed
+dataset_label: Baseline
+n_samples: 43
+n_regions: 11243
+n_pcs_used: 8
+pcs_used: PC_1, PC_2, PC_3, PC_4, PC_5, PC_6, PC_7, PC_8
+output_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Baseline/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds

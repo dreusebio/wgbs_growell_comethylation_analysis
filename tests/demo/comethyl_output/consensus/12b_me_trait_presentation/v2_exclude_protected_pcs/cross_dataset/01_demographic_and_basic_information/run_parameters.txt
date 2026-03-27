@@ -1,0 +1,8 @@
+set_name: 01_demographic_and_basic_information
+set_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/01_demographic_and_basic_information.txt
+datasets: Baseline, 36-38wk, Postpartum
+n_traits_requested: 22
+n_datasets_saved: 3
+p_thresh: 0.05
+top_n: 50
+date: 2026-03-26 18:03:00.437394

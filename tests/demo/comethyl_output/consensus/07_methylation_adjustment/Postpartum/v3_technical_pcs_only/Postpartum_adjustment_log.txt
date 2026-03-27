@@ -1,0 +1,12 @@
+mode: v3_technical_pcs_only
+status: completed
+dataset_label: Postpartum
+v3_p_thresh: 0.05
+n_samples: 43
+n_regions: 11243
+n_technical_traits_found: 3
+technical_traits_found: Percent_Duplicated_Reads, Percent_Aligned_Total, Total_Reads
+n_pcs_total: 6
+n_technical_pcs_used: 2
+technical_pcs_used: PC_4, PC_6
+output_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Postpartum/v3_technical_pcs_only/Postpartum_Adjusted_Region_Methylation_technicalPCs_only.rds

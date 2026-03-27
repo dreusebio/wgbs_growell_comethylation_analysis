@@ -569,37 +569,34 @@ validate_modules_object <- function(x, label = "modules object") {
   x$MEs <- MEs
   x
 }
-
+# ------------------------------------------------------------
+# plotMEtraitCor
+# ------------------------------------------------------------
+# Builds a ME-trait heatmap and can adjust colors 
+# ------------------------------------------------------------
 plotMEtraitCor <- function(MEtraitCor,
                            moduleOrder = 1:length(unique(MEtraitCor$module)),
                            traitOrder  = 1:length(unique(MEtraitCor$trait)),
-                           topOnly = FALSE,
-                           nTop = 250,
-                           p = 0.05,
-                           label.type = c("star", "p"),
-                           label.size = 8,
+                           topOnly = FALSE, nTop = 15, p = 0.05,
+                           label.type = c("star", "p"), label.size = 8,
                            label.nudge_y = -0.38,
-                           colors = WGCNA::blueWhiteRed(100, gamma = 0.9),
-                           limit = NULL,
-                           axis.text.size = 12,
-                           legend.position = c(1.08, 0.915),
-                           legend.text.size = 12,
-                           legend.title.size = 16,
-                           colColorMargins = c(-0.7, 4.21, 1.2, 11.07),
+                           colors = blueWhiteRed(100, gamma = 0.9), limit = NULL,
+                           axis.text.size = 12, legend.position = c(1.08, 0.915),
+                           legend.text.size = 12, legend.title.size = 16,
+                           colColorMargins = c(-0.7,4.21,1.2,11.07),
                            save = TRUE,
                            file = "ME_Trait_Correlation_Heatmap.pdf",
-                           width = 11,
-                           height = 9.5,
-                           verbose = TRUE,
+                           width = 11, height = 9.5, verbose = TRUE,
+                           ## NEW controls for the labeled color bar
                            showColorBar = TRUE,
-                           showColorBarLabels = TRUE,
-                           colorBarLabelPos = c("inside", "below"),
+                           showColorBarLabels = TRUE,             # add names on boxes
+                           colorBarLabelPos = c("inside","below"),
                            colorBarLabelSize = 3.2,
-                           colorBarLabelAngle = 90,
-                           colorBarRelHeight = 0.10,
-                           syncWidths = TRUE,
-                           autoContrastLabels = TRUE) {
-
+                           colorBarLabelAngle = 90,                # 90 = vertical
+                           colorBarRelHeight = 0.10,               # bar height rel to heatmap
+                           syncWidths = TRUE,                      # force exact alignment
+                           autoContrastLabels = TRUE               # black/white text auto
+) {
   label.type <- match.arg(label.type)
   colorBarLabelPos <- match.arg(colorBarLabelPos)
 
@@ -607,14 +604,17 @@ plotMEtraitCor <- function(MEtraitCor,
     message("[plotMEtraitCor] Plotting ME trait correlation heatmap")
   }
 
+  ## Relevel factors by requested order
   MEtraitCor$module <- factor(MEtraitCor$module,
                               levels = levels(MEtraitCor$module)[moduleOrder])
   MEtraitCor$trait  <- factor(MEtraitCor$trait,
                               levels = levels(MEtraitCor$trait)[rev(traitOrder)])
 
+  ## Significant flag (no pipes for portability)
   MEtraitCor$significant <- factor((MEtraitCor$p < p) & !is.na(MEtraitCor$p),
                                    levels = c(TRUE, FALSE))
 
+  ## Optional top-only filtering
   if (isTRUE(topOnly)) {
     if (nrow(MEtraitCor) > nTop) {
       top_mask <- MEtraitCor$p %in% sort(MEtraitCor$p)[1:nTop] & !is.na(MEtraitCor$p)
@@ -622,14 +622,13 @@ plotMEtraitCor <- function(MEtraitCor,
       top_mask <- rep(TRUE, nrow(MEtraitCor))
     }
     topModules <- unique(as.character(MEtraitCor$module[top_mask]))
-    topTraits  <- unique(as.character(MEtraitCor$trait[top_mask]))
+    topTraits  <- unique(as.character(MEtraitCor$trait [top_mask]))
     MEtraitCor <- subset(MEtraitCor, module %in% topModules & trait %in% topTraits)
-    MEtraitCor$module <- factor(
-      MEtraitCor$module,
-      levels = levels(MEtraitCor$module)[levels(MEtraitCor$module) %in% topModules]
-    )
+    MEtraitCor$module <- factor(MEtraitCor$module,
+                                levels = levels(MEtraitCor$module)[levels(MEtraitCor$module) %in% topModules])
   }
 
+  ## Choose correlation column
   if ("bicor" %in% colnames(MEtraitCor)) {
     corType <- "bicor"
   } else if ("cor" %in% colnames(MEtraitCor)) {
@@ -642,10 +641,14 @@ plotMEtraitCor <- function(MEtraitCor,
   if (is.null(limit)) limit <- max(abs(corData), na.rm = TRUE)
   titleName <- paste0(toupper(substring(corType, 1, 1)), substring(corType, 2))
 
+  ## Are module names valid R colors? (use fully qualified to avoid shadowing)
   uniqMods   <- levels(MEtraitCor$module)
   colModules <- all(uniqMods %in% grDevices::colors())
+
+  ## Extra bottom margin for heatmap when we add a color bar
   hmMarginB <- ifelse(colModules && showColorBar, yes = 2, no = 0)
 
+  ## Legend positioning (new ggplot2 style, fallback for older versions)
   legendTheme <- if (is.numeric(legend.position)) {
     tryCatch(
       ggplot2::theme(legend.position.inside = legend.position),
@@ -655,24 +658,21 @@ plotMEtraitCor <- function(MEtraitCor,
     ggplot2::theme(legend.position = legend.position)
   }
 
+  ## Base heatmap
   heatmap <- ggplot2::ggplot(MEtraitCor) +
     ggplot2::geom_tile(ggplot2::aes(x = module, y = trait, color = corData, fill = corData)) +
-    ggplot2::scale_fill_gradientn(
-      titleName,
-      colors = colors,
-      limits = c(-limit, limit),
-      aesthetics = c("color", "fill")
-    ) +
+    ggplot2::scale_fill_gradientn(titleName, colors = colors,
+                                  limits = c(-limit, limit),
+                                  aesthetics = c("color", "fill")) +
     ggplot2::scale_x_discrete(expand = ggplot2::expansion(mult = 0.01)) +
     ggplot2::scale_y_discrete(expand = ggplot2::expansion(mult = 0.01)) +
-    ggplot2::scale_alpha_manual(
-      breaks = c(TRUE, FALSE),
-      values = c(`TRUE` = 1, `FALSE` = 0),
-      guide = "none"
-    ) +
+    ggplot2::scale_alpha_manual(breaks = c(TRUE, FALSE),
+                                values = c(`TRUE` = 1, `FALSE` = 0),
+                                guide = "none") +
     ggplot2::theme_bw(base_size = 24) +
     ggplot2::theme(
-      axis.text.x = ggplot2::element_text(size = axis.text.size, color = "black", angle = 90, vjust = 0.5),
+      axis.text.x = ggplot2::element_text(size = axis.text.size, color = "black",
+                                          angle = 90, vjust = 0.5),
       axis.text.y = ggplot2::element_text(size = axis.text.size, color = "black"),
       axis.ticks  = ggplot2::element_line(linewidth = 0.8, color = "black"),
       axis.title  = ggplot2::element_blank(),
@@ -684,9 +684,8 @@ plotMEtraitCor <- function(MEtraitCor,
       panel.grid       = ggplot2::element_blank(),
       plot.background  = ggplot2::element_blank(),
       plot.margin      = grid::unit(c(1, 6, hmMarginB, 1), "lines")
-    ) +
-    legendTheme
-
+    ) + legendTheme
+    
   if (label.type == "p") {
     heatmap <- heatmap +
       ggplot2::geom_text(
@@ -701,7 +700,7 @@ plotMEtraitCor <- function(MEtraitCor,
         label = "*", color = "black", size = label.size, nudge_y = label.nudge_y
       )
   }
-
+  # Hide axis labels if we’re labeling the color bar (to avoid duplicates)
   if (showColorBar && showColorBarLabels) {
     heatmap <- heatmap +
       ggplot2::theme(
@@ -710,6 +709,7 @@ plotMEtraitCor <- function(MEtraitCor,
       )
   }
 
+  ## Optional labeled color bar (boxes + names) aligned to columns
   colColors <- NULL
   if (colModules && showColorBar) {
     if (isTRUE(verbose)) {
@@ -722,6 +722,7 @@ plotMEtraitCor <- function(MEtraitCor,
       y = 1
     )
 
+    ## auto-contrast label color for readability
     if (showColorBarLabels) {
       if (isTRUE(autoContrastLabels)) {
         lum <- function(cols) {
@@ -753,7 +754,7 @@ plotMEtraitCor <- function(MEtraitCor,
             angle = colorBarLabelAngle, vjust = 0.5, size = colorBarLabelSize
           ) +
           ggplot2::scale_colour_identity()
-      } else {
+      } else { # "below"
         baseBar <- baseBar +
           ggplot2::geom_text(
             ggplot2::aes(y = 0.05, label = as.character(module), colour = labcol),
@@ -767,6 +768,7 @@ plotMEtraitCor <- function(MEtraitCor,
     colColors <- baseBar
   }
 
+  ## Combine and sync widths for exact alignment
   if (!is.null(colColors)) {
     if (isTRUE(syncWidths)) {
       g_heat  <- ggplot2::ggplotGrob(heatmap)
@@ -793,8 +795,50 @@ plotMEtraitCor <- function(MEtraitCor,
                     width = width, height = height, units = "in")
   }
 
-  combined
+  return(combined)
 }
+
+# #below are some of the settings that can be used to make plots
+# plotMEtraitCor(
+#   MEtraitCor,                                          # data frame with columns: module, trait, p, and cor/bicor
+
+#   moduleOrder       = 1:length(unique(MEtraitCor$module)), # order of module columns (left→right)
+#   traitOrder        = 1:length(unique(MEtraitCor$trait)),  # order of trait rows (bottom→top; reversed internally)
+
+#   topOnly           = FALSE,                           # if TRUE, plot only the nTop most significant cells
+#   nTop              = 15,                              # number of most-significant cells when topOnly=TRUE
+#   p                 = 0.05,                            # significance cutoff used for stars/p-values overlay
+
+#   label.type        = c("star", "p"),                  # overlay type; default resolves to "star"
+#   label.size        = 8,                               # size of the star or p-value text
+#   label.nudge_y     = -0.38,                           # vertical nudge for label positioning
+
+#   colors            = blueWhiteRed(100, gamma = 0.9),  # heatmap palette (min→white→max)
+#   limit             = NULL,                            # color scale limit; NULL = max(abs(cor)) auto
+
+#   axis.text.size    = 12,                              # font size of axis tick labels (modules/traits)
+#   legend.position   = c(1.08, 0.915),                  # legend position (inside plotting area)
+#   legend.text.size  = 12,                              # font size of legend tick labels
+#   legend.title.size = 16,                              # font size of legend title
+
+#   colColorMargins   = c(-0.7, 4.21, 1.2, 11.07),       # margins (lines) around the module color bar (t,r,b,l)
+#   save              = TRUE,                            # write the figure to disk
+#   file              = "ME_Trait_Correlation_Heatmap.pdf", # output filename (when save=TRUE)
+#   width             = 11,                              # output width in inches
+#   height            = 9.5,                             # output height in inches
+#   verbose           = TRUE,                            # print progress messages
+
+#   # ---- NEW labeled color-bar controls ----
+#   showColorBar        = TRUE,                          # draw the module color strip under the heatmap
+#   showColorBarLabels  = TRUE,                          # put module names on the color boxes
+#   colorBarLabelPos    = c("inside","below"),           # where to place names; default resolves to "inside"
+#   colorBarLabelSize   = 3.2,                           # font size of the names on the color boxes
+#   colorBarLabelAngle  = 90,                            # rotation of those names (90 = vertical)
+#   colorBarRelHeight   = 0.10,                          # relative height of the color bar vs heatmap
+#   syncWidths          = TRUE,                          # force exact column alignment via gtable widths
+#   autoContrastLabels  = TRUE                           # auto-pick black/white text for readability on each color
+# )
+
 
 save_me_trait_method_outputs <- function(MEtraitCor,
                                          method_name,

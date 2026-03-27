@@ -1,0 +1,5 @@
+mode: v3_technical_pcs_only
+status: skipped
+dataset_label: 36-38wk
+v3_p_thresh: 0.05
+reason: no PCs selected by technical-trait filtering

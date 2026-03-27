@@ -1,0 +1,4 @@
+adjustment_version: v3_technical_pcs_only
+scale_free_cutoff: 0.8
+chosen_power: 20
+reason: fallback: smallest power maximizing number of datasets meeting cutoff

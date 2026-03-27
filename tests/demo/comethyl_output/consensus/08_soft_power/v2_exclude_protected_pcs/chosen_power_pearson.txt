@@ -1,0 +1,4 @@
+adjustment_version: v2_exclude_protected_pcs
+scale_free_cutoff: 0.8
+chosen_power: 20
+reason: smallest power where all datasets meet scale-free cutoff

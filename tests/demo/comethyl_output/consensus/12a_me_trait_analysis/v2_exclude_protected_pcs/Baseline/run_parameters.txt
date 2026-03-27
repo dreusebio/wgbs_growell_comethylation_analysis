@@ -1,0 +1,14 @@
+dataset_label: Baseline
+sample_info_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/metadata/sample_info_baseline.xlsx
+consensus_modules_rds: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/09_consensus_modules/v2_exclude_protected_pcs/shared/Consensus_Modules.rds
+adjustment_version: v2_exclude_protected_pcs
+run_pearson: FALSE
+run_bicor: TRUE
+p_thresh: 0.05
+top_n: 50
+module_dendro_distance: bicor
+n_samples_overlap: 43
+n_modules: 3
+n_traits_tested: 168
+n_outcome_traits_found: 0
+date: 2026-03-26 17:42:35.842524

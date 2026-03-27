@@ -1,0 +1,8 @@
+set_name: protected_traits
+set_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/protected_traits.txt
+datasets: Baseline, 36-38wk, Postpartum
+n_traits_requested: 19
+n_datasets_saved: 3
+p_thresh: 0.05
+top_n: 50
+date: 2026-03-26 18:03:35.979515

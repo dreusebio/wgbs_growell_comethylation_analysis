@@ -41,7 +41,7 @@
 #   --scale_free_cutoff    [default = 0.8]
 #
 # OUTPUTS
-#   <project_root>/comethyl_output/consensus/06_soft_power/<adjustment_version>/
+#   <project_root>/comethyl_output/consensus/08_soft_power/<adjustment_version>/
 #       chosen_power.txt
 #       combined_softpower_summary.tsv
 #       Consensus_SoftPower_Combined.pdf
@@ -408,7 +408,7 @@ writeLines(
     paste("chosen_power:", chosen$power),
     paste("reason:", chosen$reason)
   ),
-  con = file.path(out_dir, "chosen_power.txt")
+  con = file.path(out_dir, paste0("chosen_power_", softpower_cor, ".txt"))
 )
 
 # ------------------------------------------------------------

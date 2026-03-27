@@ -4,9 +4,9 @@ input_pcs: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/test
 pc_trait_stats: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk/PC_Trait_Correlation_Stats_Bicor.tsv
 protected_traits_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/protected_traits.txt
 technical_traits_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/technical_traits.txt
-run_v1: FALSE
+run_v1: TRUE
 run_v2: TRUE
-run_v3: FALSE
+run_v3: TRUE
 v2_cor_method: bicor
 v2_p_thresh: 0.05
 v3_p_thresh: 0.05
@@ -19,4 +19,4 @@ n_total_pcs: 8
 n_protected_traits_found: 19
 n_technical_traits_found: 3
 output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/36-38wk
-date: 2026-03-26 10:16:02.627056
+date: 2026-03-26 14:09:26.50631

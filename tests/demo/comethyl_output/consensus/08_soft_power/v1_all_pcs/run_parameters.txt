@@ -1,0 +1,21 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+adjustment_version: v1_all_pcs
+dataset1_label: Baseline
+dataset1_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Baseline/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds
+dataset2_label: 36-38wk
+dataset2_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/36-38wk/v1_all_pcs/36-38wk_Adjusted_Region_Methylation_allPCs.rds
+dataset3_label: Postpartum
+dataset3_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Postpartum/v1_all_pcs/Postpartum_Adjusted_Region_Methylation_allPCs.rds
+softpower_cor: pearson
+power_min: 1
+power_max: 20
+power_vector: 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+block_size: 20000
+gc_interval: 19999
+threads: 4
+plot_sample_dendro: TRUE
+scale_free_cutoff: 0.8
+chosen_power: 19
+chosen_reason: fallback: smallest power maximizing number of datasets meeting cutoff
+n_datasets: 3
+date: 2026-03-26 14:47:15.128293

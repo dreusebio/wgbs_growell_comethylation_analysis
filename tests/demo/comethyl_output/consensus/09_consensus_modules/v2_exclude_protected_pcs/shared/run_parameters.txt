@@ -1,0 +1,16 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+regions_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions/shared_complete_regions_4col.tsv
+adjustment_version: v2_exclude_protected_pcs
+datasets: Baseline, 36-38wk, Postpartum
+consensus_cor: pearson
+power: 20
+network_type: signed
+tom_type: signed
+deep_split: 1
+min_module_size: 7
+merge_cut_height: 0.3
+max_block_size: 1000
+network_calibration: single quantile
+save_consensus_toms: TRUE
+threads: 8
+date: 2026-03-26 16:02:35.083444

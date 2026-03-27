@@ -1,0 +1,12 @@
+dataset_label: 36-38wk
+set_name: 09_tasks_and_goals
+set_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/09_tasks_and_goals.txt
+stats_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/12a_me_trait_analysis/v2_exclude_protected_pcs/36-38wk/ME_Trait_Correlation_Stats_Bicor.tsv
+p_thresh: 0.05
+top_n: 50
+n_traits_requested: 37
+n_traits_found: 37
+n_traits_missing: 0
+n_rows_subset: 111
+n_rows_significant: 7
+date: 2026-03-26 18:03:29.635065

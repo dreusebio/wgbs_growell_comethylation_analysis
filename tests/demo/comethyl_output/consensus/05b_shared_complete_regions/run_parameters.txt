@@ -3,10 +3,11 @@ dataset1_label: Baseline
 dataset1_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/Baseline/cov3_75pct/covMin4_methSD0p05/Region_Methylation.rds
 dataset2_label: 36-38wk
 dataset2_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/36-38wk/36-38wk/covMin4_methSD0p05/Region_Methylation.rds
+regions_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/02_reference_region_filter/Baseline/cov3_75pct/covMin4_methSD0p05/Filtered_Regions.txt
 dataset3_label: Postpartum
 dataset3_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/03_region_methylation/Postpartum/Postpartum/covMin4_methSD0p05/Region_Methylation.rds
 n_datasets: 3
 n_shared_regions_before_na_filter: 11288
 n_shared_complete_regions: 11243
 output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/05b_shared_complete_regions
-date: 2026-03-25 23:22:33.377832
+date: 2026-03-26 12:05:35.070675

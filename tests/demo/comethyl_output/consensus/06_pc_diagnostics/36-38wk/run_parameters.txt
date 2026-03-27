@@ -8,7 +8,7 @@ threads: 4
 top_trait_n: 50
 top_cell_n: 50
 primary_cor_method: bicor
-selected_trait_mode: protected
+selected_trait_mode: protected_and_technical
 plot_width: 12
 plot_height: 10
 plot_dpi: 600
@@ -26,4 +26,4 @@ n_numeric_traits_used: 168
 n_protected_traits_found: 19
 n_technical_traits_found: 3
 output_dir: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/06_pc_diagnostics/36-38wk
-date: 2026-03-26 10:19:50.453884
+date: 2026-03-26 13:40:49.245886

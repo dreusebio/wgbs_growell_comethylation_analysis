@@ -1,0 +1,12 @@
+dataset_label: 36-38wk
+set_name: 02_parental_and_socioeconomic_information
+set_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/config/presentation_sets/02_parental_and_socioeconomic_information.txt
+stats_file: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/12a_me_trait_analysis/v2_exclude_protected_pcs/36-38wk/ME_Trait_Correlation_Stats_Bicor.tsv
+p_thresh: 0.05
+top_n: 50
+n_traits_requested: 17
+n_traits_found: 17
+n_traits_missing: 0
+n_rows_subset: 51
+n_rows_significant: 2
+date: 2026-03-26 18:03:02.050445

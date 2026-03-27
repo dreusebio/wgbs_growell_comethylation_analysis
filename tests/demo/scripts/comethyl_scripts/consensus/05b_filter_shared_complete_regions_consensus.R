@@ -87,7 +87,9 @@ option_list <- list(
   make_option("--dataset3_label", type = "character", default = NULL,
               help = "Label for dataset/timepoint 3 (optional)"),
   make_option("--dataset3_meth", type = "character", default = NULL,
-              help = "Path to Region_Methylation.rds for dataset 3 (optional)")
+              help = "Path to Region_Methylation.rds for dataset 3 (optional)"),
+  make_option("--regions_file", type = "character",
+            help = "Path to the filtered regions table used upstream")
 )
 
 opt <- parse_args(OptionParser(option_list = option_list))
@@ -101,7 +103,12 @@ if (is.null(opt$dataset1_label)) stop("--dataset1_label is required")
 if (is.null(opt$dataset1_meth))  stop("--dataset1_meth is required")
 if (is.null(opt$dataset2_label)) stop("--dataset2_label is required")
 if (is.null(opt$dataset2_meth))  stop("--dataset2_meth is required")
-
+if (is.null(opt$regions_file)) {
+  stop("--regions_file is required")
+}
+if (!file.exists(opt$regions_file)) {
+  stop("Regions file not found: ", opt$regions_file)
+}
 if (!dir.exists(opt$project_root)) {
   stop("Project root does not exist: ", opt$project_root)
 }
@@ -248,6 +255,65 @@ writeLines(shared_complete_regions,
 message("Saved shared complete region IDs: ", length(shared_complete_regions))
 
 # ------------------------------------------------------------
+# 9b. Save filtered regions table for downstream consensus scripts
+# ------------------------------------------------------------
+
+message("Loading regions file to create shared filtered regions table...")
+
+regions_df <- read.delim(
+  opt$regions_file,
+  header = TRUE,
+  sep = "\t",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+
+required_region_cols <- c("RegionID", "chr", "start", "end")
+missing_region_cols <- setdiff(required_region_cols, colnames(regions_df))
+
+if (length(missing_region_cols) > 0) {
+  stop("Regions file is missing required columns: ",
+       paste(missing_region_cols, collapse = ", "))
+}
+
+if (anyDuplicated(regions_df$RegionID)) {
+  dup_ids <- unique(regions_df$RegionID[duplicated(regions_df$RegionID)])
+  stop("Duplicate RegionID values found in regions_file. Example: ",
+       paste(head(dup_ids, 10), collapse = ", "))
+}
+
+regions_shared_complete <- regions_df[match(shared_complete_regions, regions_df$RegionID), ,
+                                      drop = FALSE]
+
+if (any(is.na(regions_shared_complete$RegionID))) {
+  stop("Some shared complete RegionIDs were not found in regions_file.")
+}
+
+# Keep only the four columns needed downstream
+regions_shared_complete_4col <- regions_shared_complete[, c("RegionID", "chr", "start", "end"),
+                                                        drop = FALSE]
+
+write.table(
+  regions_shared_complete_4col,
+  file = file.path(out_dir, "shared_complete_regions_4col.tsv"),
+  sep = "\t",
+  quote = FALSE,
+  row.names = FALSE
+)
+
+# Optional: save full retained region table too
+write.table(
+  regions_shared_complete,
+  file = file.path(out_dir, "shared_complete_regions_full.tsv"),
+  sep = "\t",
+  quote = FALSE,
+  row.names = FALSE
+)
+
+message("Saved shared filtered regions table: ",
+        file.path(out_dir, "shared_complete_regions_4col.tsv"))
+    
+# ------------------------------------------------------------
 # 10. Save filtered methylation matrices
 # ------------------------------------------------------------
 
@@ -298,7 +364,8 @@ run_params <- c(
   paste("dataset1_label:", opt$dataset1_label),
   paste("dataset1_meth:", opt$dataset1_meth),
   paste("dataset2_label:", opt$dataset2_label),
-  paste("dataset2_meth:", opt$dataset2_meth)
+  paste("dataset2_meth:", opt$dataset2_meth),
+  paste("regions_file:", opt$regions_file)
 )
 
 if (dataset3_provided) {

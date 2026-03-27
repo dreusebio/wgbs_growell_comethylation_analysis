@@ -1,0 +1,12 @@
+project_root: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo
+consensus_modules_rds: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/09_consensus_modules/v2_exclude_protected_pcs/shared/Consensus_Modules.rds
+dataset_label: Postpartum
+dataset_meth: /quobyte/lasallegrp/projects/wgbs_growell_comethylation_analysis/tests/demo/comethyl_output/consensus/07_methylation_adjustment/Postpartum/v2_exclude_protected_pcs/Postpartum_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds
+adjustment_version: v2_exclude_protected_pcs
+membership_cor: bicor
+max_p_outliers: 0.1
+n_real_modules: 3
+module_colors: blue, turquoise, brown
+n_regions: 11243
+n_samples_used: 43
+date: 2026-03-26 17:09:27.483562
