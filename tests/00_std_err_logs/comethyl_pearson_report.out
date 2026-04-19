@@ -1,0 +1,2555 @@
+############### Job 12046489 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-50
+############### Job 12046489 prolog ###############
+hive-dc-7-8-50
+R_LIBS_USER= /home/gekuodza/R/x86_64-conda-linux-gnu-library/4.4 
+[1] "/quobyte/lasallegrp/home/George/envs/Comethyl_v1.3.0/lib/R/library"
+OK
+
+############### Job 12046489 summary from hive-dc-7-8-50 ###############
+Name                : Cometh_GROWELL_Test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-50
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED by 2224567,CANCELLED
+ExitCode            : 0:0
+Submit              : 2026-04-13T09:51:00
+Start               : 2026-04-13T09:51:03
+End                 : 2026-04-13T10:02:07
+Reserved walltime   : 23:00:00
+Used walltime       : 00:11:04
+Used CPU time       : 00:01:00
+% User (Computation): 92.58%
+% System (I/O)      :  7.42%
+Mem reserved        : 700G
+Max Mem used        : 1.14G (hive-dc-7-8-50)
+Max Disk Write      : 40.96K (hive-dc-7-8-50)
+Max Disk Read       : 277.99M (hive-dc-7-8-50)
+
+############### Job 12046489 info ###############
+JobId=12046489 JobName=Cometh_GROWELL_Test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:11:02 TimeLimit=23:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T09:51:00 EligibleTime=2026-04-13T09:51:00
+   AccrueTime=2026-04-13T09:51:00
+   StartTime=2026-04-13T09:51:03 EndTime=2026-04-13T10:02:05 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T09:51:03 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-50
+   BatchHost=hive-dc-7-8-50
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=700G,node=1,billing=59
+   AllocTRES=cpu=59,mem=700G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=700G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_slurm.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_slurm.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12047014 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-50
+############### Job 12047014 prolog ###############
+hive-dc-7-8-50
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Fatal error: cannot open file 'scripts/comethyl_scripts/consensus/00_import_cpg_reports_consensus.R': No such file or directory
+
+############### Job 12047014 summary from hive-dc-7-8-50 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-50
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED by 2224567,CANCELLED
+ExitCode            : 0:0
+Submit              : 2026-04-13T10:07:42
+Start               : 2026-04-13T10:07:44
+End                 : 2026-04-13T10:51:22
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:43:38
+Used CPU time       :    00:04:50
+% User (Computation): 93.10%
+% System (I/O)      :  6.90%
+Mem reserved        : 950G
+Max Mem used        : 1.13G (hive-dc-7-8-50)
+Max Disk Write      : 645.12K (hive-dc-7-8-50)
+Max Disk Read       : 990.36M (hive-dc-7-8-50)
+
+############### Job 12047014 info ###############
+JobId=12047014 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:43:36 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T10:07:42 EligibleTime=2026-04-13T10:07:42
+   AccrueTime=2026-04-13T10:07:42
+   StartTime=2026-04-13T10:07:44 EndTime=2026-04-13T10:51:20 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T10:07:44 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-50
+   BatchHost=hive-dc-7-8-50
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12048560 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-50
+############### Job 12048560 prolog ###############
+hive-dc-7-8-50
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+Fatal error: cannot open file 'scripts/comethyl_scripts/consensus/00_import_cpg_reports_consensus.R': No such file or directory
+
+############### Job 12048560 summary from hive-dc-7-8-50 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-50
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED,CANCELLED by 2224567
+ExitCode            : 0:0
+Submit              : 2026-04-13T10:51:35
+Start               : 2026-04-13T10:51:37
+End                 : 2026-04-13T11:05:38
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:14:01
+Used CPU time       :    00:04:11
+% User (Computation): 87.27%
+% System (I/O)      : 12.73%
+Mem reserved        : 950G
+Max Mem used        : 8.63G (hive-dc-7-8-50)
+Max Disk Write      : 3.39G (hive-dc-7-8-50)
+Max Disk Read       : 1.17G (hive-dc-7-8-50)
+
+############### Job 12048560 info ###############
+JobId=12048560 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:14:00 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T10:51:35 EligibleTime=2026-04-13T10:51:35
+   AccrueTime=2026-04-13T10:51:35
+   StartTime=2026-04-13T10:51:37 EndTime=2026-04-13T11:05:37 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T10:51:37 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-50
+   BatchHost=hive-dc-7-8-50
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12048992 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-26
+############### Job 12048992 prolog ###############
+hive-dc-7-8-26
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+
+############### Job 12048992 summary from hive-dc-7-8-26 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-26
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED by 2224567,CANCELLED
+ExitCode            : 0:0
+Submit              : 2026-04-13T11:05:41
+Start               : 2026-04-13T11:05:44
+End                 : 2026-04-13T11:39:36
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:33:52
+Used CPU time       :    00:11:14
+% User (Computation): 86.28%
+% System (I/O)      : 13.72%
+Mem reserved        : 950G
+Max Mem used        : 8.75G (hive-dc-7-8-26)
+Max Disk Write      : 8.63G (hive-dc-7-8-26)
+Max Disk Read       : 3.24G (hive-dc-7-8-26)
+
+############### Job 12048992 info ###############
+JobId=12048992 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:33:50 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T11:05:41 EligibleTime=2026-04-13T11:05:41
+   AccrueTime=2026-04-13T11:05:41
+   StartTime=2026-04-13T11:05:44 EndTime=2026-04-13T11:39:34 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T11:05:44 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-26
+   BatchHost=hive-dc-7-8-26
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12050636 prolog ###############
+SLURM_NODELIST: hive-dc-7-6-30
+############### Job 12050636 prolog ###############
+hive-dc-7-6-30
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+
+############### Job 12050636 summary from hive-dc-7-6-30 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-6-30
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED,CANCELLED by 2224567
+ExitCode            : 0:0
+Submit              : 2026-04-13T11:43:31
+Start               : 2026-04-13T11:43:33
+End                 : 2026-04-13T12:22:26
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:38:53
+Used CPU time       :    00:06:10
+% User (Computation): 96.42%
+% System (I/O)      :  3.58%
+Mem reserved        : 950G
+Max Mem used        : 1.29G (hive-dc-7-6-30)
+Max Disk Write      : 3.79M (hive-dc-7-6-30)
+Max Disk Read       : 643.06M (hive-dc-7-6-30)
+
+############### Job 12050636 info ###############
+JobId=12050636 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:38:51 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T11:43:31 EligibleTime=2026-04-13T11:43:31
+   AccrueTime=2026-04-13T11:43:31
+   StartTime=2026-04-13T11:43:33 EndTime=2026-04-13T12:22:24 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T11:43:33 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-6-30
+   BatchHost=hive-dc-7-6-30
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12051948 prolog ###############
+SLURM_NODELIST: hive-dc-7-6-50
+############### Job 12051948 prolog ###############
+hive-dc-7-6-50
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 59 working processes.
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1 0.003610  3.840          0.982 856.0000  856.0000 887.000 5.02e-01
+2      2 0.000067 -0.267          0.988 441.0000  441.0000 473.000 2.59e-01
+3      3 0.004350 -1.470          0.992 233.0000  232.0000 258.000 1.36e-01
+4      4 0.020500 -2.470          0.993 125.0000  125.0000 144.000 7.36e-02
+5      5 0.035200 -2.580          0.981  69.0000   68.9000  82.400 4.05e-02
+6      6 0.053300 -2.720          0.968  38.7000   38.6000  48.200 2.27e-02
+7      7 0.088400 -3.040          0.934  22.1000   22.0000  28.700 1.30e-02
+8      8 0.126000 -3.310          0.894  12.9000   12.8000  17.400 7.55e-03
+9      9 0.181000 -3.520          0.923   7.6100    7.5600  10.900 4.46e-03
+10    10 0.226000 -3.540          0.936   4.5700    4.5300   6.990 2.68e-03
+11    11 0.306000 -3.590          0.909   2.7900    2.7500   4.540 1.64e-03
+12    12 0.452000 -3.970          0.802   1.7300    1.7000   3.120 1.01e-03
+13    13 0.606000 -4.130          0.755   1.0800    1.0600   2.290 6.37e-04
+14    14 0.763000 -4.320          0.765   0.6920    0.6680   1.800 4.06e-04
+15    15 0.844000 -4.280          0.801   0.4480    0.4260   1.460 2.63e-04
+16    16 0.880000 -3.990          0.860   0.2950    0.2750   1.230 1.73e-04
+17    17 0.880000 -3.700          0.885   0.1970    0.1800   1.060 1.16e-04
+18    18 0.897000 -3.170          0.939   0.1340    0.1180   0.936 7.86e-05
+19    19 0.887000 -2.870          0.928   0.0927    0.0782   0.837 5.44e-05
+20    20 0.903000 -2.600          0.925   0.0653    0.0525   0.756 3.83e-05
+   Centralization Heterogeneity
+1        0.018100        0.0115
+2        0.018600        0.0227
+3        0.015000        0.0337
+4        0.011000        0.0447
+5        0.007840        0.0557
+6        0.005540        0.0670
+7        0.003870        0.0786
+8        0.002690        0.0907
+9        0.001960        0.1040
+10       0.001420        0.1180
+11       0.001030        0.1350
+12       0.000822        0.1550
+13       0.000706        0.1820
+14       0.000649        0.2180
+15       0.000597        0.2680
+16       0.000551        0.3370
+17       0.000509        0.4290
+18       0.000471        0.5510
+19       0.000437        0.7070
+20       0.000406        0.9020
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k. max.k.  Density
+1      1   0.0233  12.10          0.992 855.0000  856.0000 888.00 5.02e-01
+2      2   0.0200  -5.73          0.968 441.0000  440.0000 478.00 2.59e-01
+3      3   0.1970 -11.50          0.924 232.0000  232.0000 265.00 1.36e-01
+4      4   0.4030 -12.00          0.901 125.0000  125.0000 151.00 7.35e-02
+5      5   0.5130 -11.30          0.852  69.0000   68.5000  88.50 4.05e-02
+6      6   0.5730  -9.59          0.849  38.7000   38.3000  53.00 2.27e-02
+7      7   0.6470  -8.61          0.853  22.1000   21.8000  32.50 1.30e-02
+8      8   0.7100  -7.78          0.857  12.9000   12.7000  20.30 7.56e-03
+9      9   0.7480  -7.27          0.833   7.6300    7.4500  12.90 4.48e-03
+10    10   0.7970  -6.62          0.859   4.5900    4.4600   8.45 2.69e-03
+11    11   0.8540  -6.07          0.891   2.8000    2.7000   5.62 1.64e-03
+12    12   0.8780  -5.44          0.885   1.7400    1.6600   3.80 1.02e-03
+13    13   0.9230  -5.13          0.906   1.1000    1.0400   2.84 6.43e-04
+14    14   0.9630  -4.76          0.954   0.7000    0.6550   2.27 4.11e-04
+15    15   0.9500  -4.30          0.952   0.4550    0.4190   1.90 2.67e-04
+16    16   0.3270  -5.21          0.173   0.3000    0.2700   1.63 1.76e-04
+17    17   0.3270  -4.60          0.171   0.2010    0.1750   1.43 1.18e-04
+18    18   0.3230  -4.05          0.163   0.1370    0.1160   1.28 8.05e-05
+19    19   0.3190  -3.66          0.151   0.0953    0.0769   1.16 5.59e-05
+20    20   0.9170  -2.41          0.953   0.0674    0.0516   1.06 3.96e-05
+   Centralization Heterogeneity
+1        0.019200        0.0122
+2        0.022100        0.0242
+3        0.019300        0.0363
+4        0.015300        0.0488
+5        0.011500        0.0618
+6        0.008410        0.0756
+7        0.006070        0.0903
+8        0.004350        0.1060
+9        0.003110        0.1230
+10       0.002270        0.1430
+11       0.001660        0.1650
+12       0.001210        0.1910
+13       0.001020        0.2250
+14       0.000924        0.2690
+15       0.000846        0.3280
+16       0.000779        0.4080
+17       0.000721        0.5150
+18       0.000670        0.6550
+19       0.000624        0.8330
+20       0.000582        1.0600
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1  0.12200 21.70          0.995 857.0000  857.0000 889.000 5.03e-01
+2      2  0.00388  1.85          0.998 442.0000  442.0000 477.000 2.59e-01
+3      3  0.03730 -3.92          0.997 233.0000  233.0000 264.000 1.37e-01
+4      4  0.10300 -5.17          0.987 125.0000  125.0000 150.000 7.36e-02
+5      5  0.15500 -5.16          0.964  69.0000   68.6000  87.200 4.05e-02
+6      6  0.19300 -4.80          0.919  38.7000   38.4000  51.800 2.27e-02
+7      7  0.24500 -4.64          0.896  22.1000   21.8000  31.400 1.30e-02
+8      8  0.26400 -4.19          0.853  12.8000   12.6000  19.400 7.52e-03
+9      9  0.31800 -4.08          0.826   7.5600    7.4200  12.300 4.44e-03
+10    10  0.37600 -4.03          0.818   4.5400    4.4400   7.930 2.66e-03
+11    11  0.43900 -3.95          0.818   2.7600    2.6900   5.200 1.62e-03
+12    12  0.50300 -3.97          0.840   1.7100    1.6500   3.460 1.00e-03
+13    13  0.52700 -3.60          0.847   1.0700    1.0300   2.340 6.28e-04
+14    14  0.53600 -3.08          0.765   0.6800    0.6470   1.600 3.99e-04
+15    15  0.76700 -3.55          0.848   0.4390    0.4120   1.270 2.58e-04
+16    16  0.89600 -3.64          0.898   0.2880    0.2660   1.030 1.69e-04
+17    17  0.93500 -3.54          0.917   0.1910    0.1730   0.866 1.12e-04
+18    18  0.93200 -3.33          0.919   0.1290    0.1130   0.754 7.60e-05
+19    19  0.92800 -3.09          0.919   0.0890    0.0752   0.691 5.22e-05
+20    20  0.97100 -2.71          0.978   0.0622    0.0502   0.643 3.65e-05
+   Centralization Heterogeneity
+1        0.019100        0.0133
+2        0.021000        0.0264
+3        0.018300        0.0394
+4        0.014400        0.0525
+5        0.010700        0.0659
+6        0.007730        0.0796
+7        0.005500        0.0938
+8        0.003880        0.1090
+9        0.002770        0.1240
+10       0.001990        0.1410
+11       0.001440        0.1590
+12       0.001030        0.1800
+13       0.000745        0.2040
+14       0.000538        0.2360
+15       0.000485        0.2770
+16       0.000438        0.3330
+17       0.000397        0.4080
+18       0.000367        0.5070
+19       0.000354        0.6360
+20       0.000341        0.7990
+pdf 
+  2 
+Allowing parallel execution with up to 16 working processes.
+[1]   43 1705
+[1] "Region_1" "Region_2" "Region_3" "Region_4" "Region_5" "Region_6"
+NULL
+  RegionID   chr    start      end width n covMin  covMean    covSD  methMean
+1 Region_1 chr22 10673335 10673419    84 5     11 48.11628 20.99117 0.3091990
+2 Region_2 chr22 10684412 10684470    58 3     10 38.02326 18.96926 0.5816419
+3 Region_3 chr22 10720472 10720602   130 5     15 50.04651 18.81736 0.6472219
+4 Region_4 chr22 10749151 10749257   106 3     13 39.58140 15.47538 0.7667707
+5 Region_5 chr22 10764211 10764307    96 3     13 55.74419 22.94205 0.3280570
+6 Region_6 chr22 10956671 10956861   190 3     24 48.02326 10.61555 0.6602165
+      methSD
+1 0.09921709
+2 0.09102648
+3 0.09435566
+4 0.09762965
+5 0.09201384
+6 0.10144139
+[1] 1707   11
+ Calculating consensus modules and module eigengenes block-wise from all genes
+ Calculating topological overlaps block-wise from all genes
+ ....Working on set 1
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 2
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 3
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ..Working on block 1 .
+ ....Working on set 1
+ ....Working on set 2
+ ....Working on set 3
+ ....Calculating consensus network
+ ..Working on block 1 .
+ ....clustering and detecting modules..
+     ..done.
+ No modules detected in block 1 --> continuing with next block.
+ ....checking for genes that should be reassigned..
+ ..merging consensus modules that are too close..
+     mergeCloseModules: Merging modules whose distance is less than 0.2
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 1 module eigengenes in given set.
+ blockwiseConsensusModules: mergeCloseModule failed with this message:
+       Error in mergeCloseModules(multiExpr, colors[gsg$goodGenes], equalizeQuantiles = equalizeQuantilesForModuleMerging,  : 
+  Error in moduleEigengenes(expr = exprData[[set]]$data, colors = setColors,  : 
+  Color levels are empty. Possible reason: the only color is grey and grey module is excluded from the calculation.
+
+  ---> returning unmerged consensus modules
+ multiSetMEs: Calculating module MEs.
+   Working on set 1 ...
+   Working on set 2 ...
+   Working on set 3 ...
+Allowing multi-threading with up to 128 threads.
+Allowing multi-threading with up to 128 threads.
+Runtime: 2219 seconds
+
+############### Job 12051948 summary from hive-dc-7-6-50 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-6-50
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-13T12:26:35
+Start               : 2026-04-13T12:26:39
+End                 : 2026-04-13T13:03:38
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:36:59
+Used CPU time       :    00:09:27
+% User (Computation): 91.86%
+% System (I/O)      :  8.14%
+Mem reserved        : 950G
+Max Mem used        : 1.77G (hive-dc-7-6-50)
+Max Disk Write      : 48.05M (hive-dc-7-6-50)
+Max Disk Read       : 835.71M (hive-dc-7-6-50)
+
+############### Job 12051948 info ###############
+JobId=12051948 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:36:59 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T12:26:35 EligibleTime=2026-04-13T12:26:35
+   AccrueTime=2026-04-13T12:26:35
+   StartTime=2026-04-13T12:26:39 EndTime=2026-04-13T13:03:38 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T12:26:39 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-6-50
+   BatchHost=hive-dc-7-6-50
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12053695 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-26
+############### Job 12053695 prolog ###############
+hive-dc-7-8-26
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1 0.047500 20.000          0.993 5640.000  5640.000 5840.00 5.02e-01
+2      2 0.000461  0.998          0.997 2910.000  2900.000 3120.00 2.58e-01
+3      3 0.018100 -4.310          0.997 1530.000  1530.000 1700.00 1.36e-01
+4      4 0.046800 -5.370          0.998  826.000   825.000  952.00 7.35e-02
+5      5 0.080200 -5.850          0.998  455.000   454.000  544.00 4.04e-02
+6      6 0.098100 -5.560          0.996  255.000   255.000  317.00 2.27e-02
+7      7 0.131000 -5.740          0.992  146.000   145.000  188.00 1.30e-02
+8      8 0.159000 -5.600          0.988   84.800    84.500  113.00 7.54e-03
+9      9 0.184000 -5.500          0.981   50.100    49.900   69.60 4.46e-03
+10    10 0.198000 -5.140          0.974   30.100    29.900   43.30 2.68e-03
+11    11 0.216000 -4.900          0.968   18.300    18.200   27.40 1.63e-03
+12    12 0.210000 -4.270          0.959   11.300    11.200   17.60 1.01e-03
+13    13 0.247000 -4.250          0.950    7.080     6.990   11.50 6.30e-04
+14    14 0.263000 -4.020          0.938    4.480     4.420    7.62 3.99e-04
+15    15 0.273000 -3.680          0.902    2.870     2.830    5.10 2.56e-04
+16    16 0.507000 -5.230          0.914    1.860     1.830    3.78 1.66e-04
+17    17 0.684000 -6.070          0.891    1.220     1.200    2.90 1.09e-04
+18    18 0.808000 -6.200          0.875    0.811     0.789    2.30 7.21e-05
+19    19 0.888000 -5.950          0.882    0.543     0.527    1.87 4.83e-05
+20    20 0.935000 -5.620          0.918    0.368     0.354    1.55 3.27e-05
+   Centralization Heterogeneity
+1        0.017800        0.0104
+2        0.018800        0.0203
+3        0.015200        0.0299
+4        0.011200        0.0393
+5        0.007930        0.0485
+6        0.005480        0.0577
+7        0.003740        0.0667
+8        0.002550        0.0758
+9        0.001730        0.0849
+10       0.001180        0.0941
+11       0.000806        0.1030
+12       0.000559        0.1130
+13       0.000394        0.1230
+14       0.000279        0.1330
+15       0.000198        0.1440
+16       0.000171        0.1560
+17       0.000149        0.1700
+18       0.000132        0.1860
+19       0.000118        0.2060
+20       0.000105        0.2300
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1  0.00221  4.50          0.993 5640.000  5640.000 5830.00 5.02e-01
+2      2  0.00155  1.82          0.994 2900.000  2900.000 3100.00 2.58e-01
+3      3  0.01170 -3.38          0.987 1530.000  1530.000 1700.00 1.36e-01
+4      4  0.07070 -6.20          0.970  828.000   826.000  962.00 7.37e-02
+5      5  0.14500 -7.11          0.936  457.000   455.000  558.00 4.06e-02
+6      6  0.24000 -7.65          0.897  257.000   256.000  331.00 2.29e-02
+7      7  0.33200 -7.63          0.864  147.000   146.000  201.00 1.31e-02
+8      8  0.46500 -8.04          0.856   86.000    85.200  126.00 7.65e-03
+9      9  0.59500 -8.39          0.874   51.000    50.400   80.90 4.54e-03
+10    10  0.68700 -8.25          0.879   30.700    30.300   53.00 2.73e-03
+11    11  0.75100 -7.97          0.887   18.800    18.500   35.40 1.67e-03
+12    12  0.81000 -7.70          0.902   11.700    11.400   24.10 1.04e-03
+13    13  0.85300 -7.31          0.910    7.320     7.160   16.60 6.51e-04
+14    14  0.88500 -6.97          0.919    4.660     4.540   11.70 4.15e-04
+15    15  0.91500 -6.69          0.936    3.000     2.910    8.30 2.67e-04
+16    16  0.93700 -6.43          0.948    1.960     1.890    5.98 1.74e-04
+17    17  0.95300 -6.10          0.958    1.290     1.240    4.36 1.15e-04
+18    18  0.96700 -5.74          0.968    0.860     0.823    3.21 7.65e-05
+19    19  0.97900 -5.36          0.975    0.579     0.551    2.45 5.15e-05
+20    20  0.99500 -5.12          0.994    0.394     0.372    2.10 3.51e-05
+   Centralization Heterogeneity
+1        0.017000        0.0101
+2        0.017600        0.0199
+3        0.015200        0.0296
+4        0.011900        0.0393
+5        0.008970        0.0491
+6        0.006590        0.0592
+7        0.004760        0.0695
+8        0.003550        0.0802
+9        0.002650        0.0913
+10       0.001980        0.1030
+11       0.001480        0.1150
+12       0.001100        0.1280
+13       0.000828        0.1410
+14       0.000623        0.1550
+15       0.000471        0.1710
+16       0.000358        0.1870
+17       0.000273        0.2060
+18       0.000209        0.2270
+19       0.000166        0.2510
+20       0.000151        0.2810
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1 0.091800  35.90          0.989 5630.000  5630.000 5790.00 5.01e-01
+2      2 0.000591  -1.33          0.962 2900.000  2900.000 3080.00 2.58e-01
+3      3 0.140000 -14.10          0.929 1530.000  1530.000 1700.00 1.36e-01
+4      4 0.460000 -20.10          0.934  826.000   823.000  969.00 7.35e-02
+5      5 0.646000 -19.80          0.935  456.000   453.000  569.00 4.06e-02
+6      6 0.744000 -18.00          0.938  257.000   255.000  344.00 2.29e-02
+7      7 0.823000 -16.60          0.942  148.000   146.000  213.00 1.31e-02
+8      8 0.875000 -14.80          0.945   86.200    85.000  135.00 7.67e-03
+9      9 0.910000 -13.30          0.948   51.200    50.300   88.00 4.56e-03
+10    10 0.923000 -12.20          0.939   30.900    30.300   58.30 2.75e-03
+11    11 0.578000 -15.80          0.499   18.900    18.500   39.40 1.69e-03
+12    12 0.594000 -14.20          0.513   11.800    11.500   27.10 1.05e-03
+13    13 0.606000 -12.90          0.525    7.420     7.190   18.90 6.60e-04
+14    14 0.615000 -11.90          0.534    4.730     4.570   13.40 4.21e-04
+15    15 0.629000 -11.00          0.550    3.050     2.940    9.63 2.72e-04
+16    16 0.633000 -10.20          0.555    2.000     1.910    7.00 1.78e-04
+17    17 0.596000 -11.40          0.497    1.320     1.260    5.14 1.17e-04
+18    18 0.595000 -10.60          0.498    0.881     0.837    3.82 7.83e-05
+19    19 0.631000  -8.18          0.554    0.594     0.561    2.86 5.29e-05
+20    20 0.986000  -5.57          0.982    0.405     0.380    2.16 3.61e-05
+   Centralization Heterogeneity
+1        0.013900       0.00843
+2        0.016200       0.01680
+3        0.015100       0.02540
+4        0.012700       0.03420
+5        0.010100       0.04340
+6        0.007730       0.05300
+7        0.005850       0.06300
+8        0.004380       0.07350
+9        0.003270       0.08460
+10       0.002440       0.09630
+11       0.001820       0.10900
+12       0.001360       0.12200
+13       0.001020       0.13500
+14       0.000772       0.15000
+15       0.000585       0.16500
+16       0.000445       0.18200
+17       0.000340       0.20000
+18       0.000261       0.22000
+19       0.000201       0.24200
+20       0.000156       0.26900
+pdf 
+  2 
+Allowing parallel execution with up to 16 working processes.
+[1]    43 11243
+[1] "Region_1" "Region_3" "Region_4" "Region_5" "Region_6" "Region_7"
+NULL
+  RegionID   chr    start      end width  n covMin   covMean    covSD  methMean
+1 Region_1 chr22 10673335 10673419    84  5     11  48.11628 20.99117 0.3091990
+2 Region_2 chr22 10679289 10679368    79  4      6  40.23256 22.67455 0.6522004
+3 Region_3 chr22 10684412 10684470    58  3     10  38.02326 18.96926 0.5816419
+4 Region_4 chr22 10686157 10686406   249  4     17  52.25581 20.88186 0.6664980
+5 Region_5 chr22 10686997 10687229   232  3      9  32.97674 14.46587 0.5917972
+6 Region_6 chr22 10687446 10688088   642 10     89 186.53488 52.67662 0.6414066
+      methSD
+1 0.09921709
+2 0.12501522
+3 0.09102648
+4 0.07483132
+5 0.12655874
+6 0.05024057
+[1] 11288    11
+ Calculating consensus modules and module eigengenes block-wise from all genes
+ Calculating topological overlaps block-wise from all genes
+ ....Working on set 1
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 2
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 3
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ..Working on block 1 .
+ ....Working on set 1
+ ......saving TOM similarity to disk cache..
+ ....Working on set 2
+ ......saving TOM similarity to disk cache..
+ ....Working on set 3
+ ......saving TOM similarity to disk cache..
+ ....Calculating consensus network
+ ......working on chunk 1
+ ......working on chunk 2
+ ..Working on block 1 .
+ ....clustering and detecting modules..
+     ..done.
+ ....calculating eigengenes..
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         Working on set 2 ...
+         Working on set 3 ...
+ ....checking consensus modules for statistical meaningfulness..
+ ....checking for genes that should be reassigned..
+ ......module membership p-values..
+ ......module membership scores..
+ ......individual modules.. 
+ ..merging consensus modules that are too close..
+     mergeCloseModules: Merging modules whose distance is less than 0.2
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+     mergeCloseModules: less than two proper modules.
+      ..color levels are grey, turquoise
+      ..there is nothing to merge.
+       Calculating new MEs...
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+null device 
+          1 
+Allowing multi-threading with up to 128 threads.
+Allowing multi-threading with up to 128 threads.
+Runtime: 1422 seconds
+
+############### Job 12053695 summary from hive-dc-7-8-26 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-26
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-13T13:26:17
+Start               : 2026-04-13T13:26:18
+End                 : 2026-04-13T13:50:01
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:23:43
+Used CPU time       :    00:51:28
+% User (Computation): 88.64%
+% System (I/O)      : 11.36%
+Mem reserved        : 950G
+Max Mem used        : 6.28G (hive-dc-7-8-26)
+Max Disk Write      : 11.83G (hive-dc-7-8-26)
+Max Disk Read       : 7.41G (hive-dc-7-8-26)
+
+############### Job 12053695 info ###############
+JobId=12053695 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8146 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:23:43 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-13T13:26:17 EligibleTime=2026-04-13T13:26:17
+   AccrueTime=2026-04-13T13:26:17
+   StartTime=2026-04-13T13:26:18 EndTime=2026-04-13T13:50:01 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-13T13:26:18 Scheduler=Backfill
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:66168
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-26
+   BatchHost=hive-dc-7-8-26
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12101895 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-14
+############### Job 12101895 prolog ###############
+hive-dc-7-8-14
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Runtime: 82 seconds
+
+############### Job 12101895 summary from hive-dc-7-8-14 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-14
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T11:41:10
+Start               : 2026-04-14T11:41:12
+End                 : 2026-04-14T11:42:34
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:01:22
+Used CPU time       :    00:00:58
+% User (Computation): 90.10%
+% System (I/O)      :  9.90%
+Mem reserved        : 950G
+Max Mem used        : 962.28M (hive-dc-7-8-14)
+Max Disk Write      : 153.60K (hive-dc-7-8-14)
+Max Disk Read       : 164.93M (hive-dc-7-8-14)
+
+############### Job 12101895 info ###############
+JobId=12101895 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8147 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:22 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T11:41:10 EligibleTime=2026-04-14T11:41:10
+   AccrueTime=2026-04-14T11:41:10
+   StartTime=2026-04-14T11:41:12 EndTime=2026-04-14T11:42:34 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T11:41:12 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-14
+   BatchHost=hive-dc-7-8-14
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12104361 prolog ###############
+SLURM_NODELIST: hive-dc-7-6-30
+############### Job 12104361 prolog ###############
+hive-dc-7-6-30
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing multi-threading with up to 64 threads.
+Allowing multi-threading with up to 64 threads.
+Runtime: 136 seconds
+
+############### Job 12104361 summary from hive-dc-7-6-30 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-6-30
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T12:16:13
+Start               : 2026-04-14T12:16:14
+End                 : 2026-04-14T12:18:30
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:02:16
+Used CPU time       :    00:02:08
+% User (Computation): 95.02%
+% System (I/O)      :  4.98%
+Mem reserved        : 950G
+Max Mem used        : 1.00G (hive-dc-7-6-30)
+Max Disk Write      : 256.00K (hive-dc-7-6-30)
+Max Disk Read       : 321.11M (hive-dc-7-6-30)
+
+############### Job 12104361 info ###############
+JobId=12104361 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:02:16 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T12:16:13 EligibleTime=2026-04-14T12:16:13
+   AccrueTime=2026-04-14T12:16:13
+   StartTime=2026-04-14T12:16:14 EndTime=2026-04-14T12:18:30 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T12:16:14 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-6-30
+   BatchHost=hive-dc-7-6-30
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12104645 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-46
+############### Job 12104645 prolog ###############
+hive-dc-7-8-46
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing multi-threading with up to 128 threads.
+Allowing multi-threading with up to 128 threads.
+Runtime: 119 seconds
+
+############### Job 12104645 summary from hive-dc-7-8-46 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-46
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T12:19:23
+Start               : 2026-04-14T12:19:26
+End                 : 2026-04-14T12:21:25
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:01:59
+Used CPU time       :    00:01:51
+% User (Computation): 92.51%
+% System (I/O)      :  7.49%
+Mem reserved        : 950G
+Max Mem used        : 738.80M (hive-dc-7-8-46)
+Max Disk Write      : 307.20K (hive-dc-7-8-46)
+Max Disk Read       : 305.61M (hive-dc-7-8-46)
+
+############### Job 12104645 info ###############
+JobId=12104645 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:59 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T12:19:23 EligibleTime=2026-04-14T12:19:23
+   AccrueTime=2026-04-14T12:19:23
+   StartTime=2026-04-14T12:19:26 EndTime=2026-04-14T12:21:25 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T12:19:26 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-46
+   BatchHost=hive-dc-7-8-46
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12104942 prolog ###############
+SLURM_NODELIST: hive-dc-7-6-30
+############### Job 12104942 prolog ###############
+hive-dc-7-6-30
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1 0.003610  3.840          0.982 856.0000  856.0000 887.000 5.02e-01
+2      2 0.000067 -0.267          0.988 441.0000  441.0000 473.000 2.59e-01
+3      3 0.004350 -1.470          0.992 233.0000  232.0000 258.000 1.36e-01
+4      4 0.020500 -2.470          0.993 125.0000  125.0000 144.000 7.36e-02
+5      5 0.035200 -2.580          0.981  69.0000   68.9000  82.400 4.05e-02
+6      6 0.053300 -2.720          0.968  38.7000   38.6000  48.200 2.27e-02
+7      7 0.088400 -3.040          0.934  22.1000   22.0000  28.700 1.30e-02
+8      8 0.126000 -3.310          0.894  12.9000   12.8000  17.400 7.55e-03
+9      9 0.181000 -3.520          0.923   7.6100    7.5600  10.900 4.46e-03
+10    10 0.226000 -3.540          0.936   4.5700    4.5300   6.990 2.68e-03
+11    11 0.306000 -3.590          0.909   2.7900    2.7500   4.540 1.64e-03
+12    12 0.452000 -3.970          0.802   1.7300    1.7000   3.120 1.01e-03
+13    13 0.606000 -4.130          0.755   1.0800    1.0600   2.290 6.37e-04
+14    14 0.763000 -4.320          0.765   0.6920    0.6680   1.800 4.06e-04
+15    15 0.844000 -4.280          0.801   0.4480    0.4260   1.460 2.63e-04
+16    16 0.880000 -3.990          0.860   0.2950    0.2750   1.230 1.73e-04
+17    17 0.880000 -3.700          0.885   0.1970    0.1800   1.060 1.16e-04
+18    18 0.897000 -3.170          0.939   0.1340    0.1180   0.936 7.86e-05
+19    19 0.887000 -2.870          0.928   0.0927    0.0782   0.837 5.44e-05
+20    20 0.903000 -2.600          0.925   0.0653    0.0525   0.756 3.83e-05
+   Centralization Heterogeneity
+1        0.018100        0.0115
+2        0.018600        0.0227
+3        0.015000        0.0337
+4        0.011000        0.0447
+5        0.007840        0.0557
+6        0.005540        0.0670
+7        0.003870        0.0786
+8        0.002690        0.0907
+9        0.001960        0.1040
+10       0.001420        0.1180
+11       0.001030        0.1350
+12       0.000822        0.1550
+13       0.000706        0.1820
+14       0.000649        0.2180
+15       0.000597        0.2680
+16       0.000551        0.3370
+17       0.000509        0.4290
+18       0.000471        0.5510
+19       0.000437        0.7070
+20       0.000406        0.9020
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k. max.k.  Density
+1      1   0.0233  12.10          0.992 855.0000  856.0000 888.00 5.02e-01
+2      2   0.0200  -5.73          0.968 441.0000  440.0000 478.00 2.59e-01
+3      3   0.1970 -11.50          0.924 232.0000  232.0000 265.00 1.36e-01
+4      4   0.4030 -12.00          0.901 125.0000  125.0000 151.00 7.35e-02
+5      5   0.5130 -11.30          0.852  69.0000   68.5000  88.50 4.05e-02
+6      6   0.5730  -9.59          0.849  38.7000   38.3000  53.00 2.27e-02
+7      7   0.6470  -8.61          0.853  22.1000   21.8000  32.50 1.30e-02
+8      8   0.7100  -7.78          0.857  12.9000   12.7000  20.30 7.56e-03
+9      9   0.7480  -7.27          0.833   7.6300    7.4500  12.90 4.48e-03
+10    10   0.7970  -6.62          0.859   4.5900    4.4600   8.45 2.69e-03
+11    11   0.8540  -6.07          0.891   2.8000    2.7000   5.62 1.64e-03
+12    12   0.8780  -5.44          0.885   1.7400    1.6600   3.80 1.02e-03
+13    13   0.9230  -5.13          0.906   1.1000    1.0400   2.84 6.43e-04
+14    14   0.9630  -4.76          0.954   0.7000    0.6550   2.27 4.11e-04
+15    15   0.9500  -4.30          0.952   0.4550    0.4190   1.90 2.67e-04
+16    16   0.3270  -5.21          0.173   0.3000    0.2700   1.63 1.76e-04
+17    17   0.3270  -4.60          0.171   0.2010    0.1750   1.43 1.18e-04
+18    18   0.3230  -4.05          0.163   0.1370    0.1160   1.28 8.05e-05
+19    19   0.3190  -3.66          0.151   0.0953    0.0769   1.16 5.59e-05
+20    20   0.9170  -2.41          0.953   0.0674    0.0516   1.06 3.96e-05
+   Centralization Heterogeneity
+1        0.019200        0.0122
+2        0.022100        0.0242
+3        0.019300        0.0363
+4        0.015300        0.0488
+5        0.011500        0.0618
+6        0.008410        0.0756
+7        0.006070        0.0903
+8        0.004350        0.1060
+9        0.003110        0.1230
+10       0.002270        0.1430
+11       0.001660        0.1650
+12       0.001210        0.1910
+13       0.001020        0.2250
+14       0.000924        0.2690
+15       0.000846        0.3280
+16       0.000779        0.4080
+17       0.000721        0.5150
+18       0.000670        0.6550
+19       0.000624        0.8330
+20       0.000582        1.0600
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1  0.12200 21.70          0.995 857.0000  857.0000 889.000 5.03e-01
+2      2  0.00388  1.85          0.998 442.0000  442.0000 477.000 2.59e-01
+3      3  0.03730 -3.92          0.997 233.0000  233.0000 264.000 1.37e-01
+4      4  0.10300 -5.17          0.987 125.0000  125.0000 150.000 7.36e-02
+5      5  0.15500 -5.16          0.964  69.0000   68.6000  87.200 4.05e-02
+6      6  0.19300 -4.80          0.919  38.7000   38.4000  51.800 2.27e-02
+7      7  0.24500 -4.64          0.896  22.1000   21.8000  31.400 1.30e-02
+8      8  0.26400 -4.19          0.853  12.8000   12.6000  19.400 7.52e-03
+9      9  0.31800 -4.08          0.826   7.5600    7.4200  12.300 4.44e-03
+10    10  0.37600 -4.03          0.818   4.5400    4.4400   7.930 2.66e-03
+11    11  0.43900 -3.95          0.818   2.7600    2.6900   5.200 1.62e-03
+12    12  0.50300 -3.97          0.840   1.7100    1.6500   3.460 1.00e-03
+13    13  0.52700 -3.60          0.847   1.0700    1.0300   2.340 6.28e-04
+14    14  0.53600 -3.08          0.765   0.6800    0.6470   1.600 3.99e-04
+15    15  0.76700 -3.55          0.848   0.4390    0.4120   1.270 2.58e-04
+16    16  0.89600 -3.64          0.898   0.2880    0.2660   1.030 1.69e-04
+17    17  0.93500 -3.54          0.917   0.1910    0.1730   0.866 1.12e-04
+18    18  0.93200 -3.33          0.919   0.1290    0.1130   0.754 7.60e-05
+19    19  0.92800 -3.09          0.919   0.0890    0.0752   0.691 5.22e-05
+20    20  0.97100 -2.71          0.978   0.0622    0.0502   0.643 3.65e-05
+   Centralization Heterogeneity
+1        0.019100        0.0133
+2        0.021000        0.0264
+3        0.018300        0.0394
+4        0.014400        0.0525
+5        0.010700        0.0659
+6        0.007730        0.0796
+7        0.005500        0.0938
+8        0.003880        0.1090
+9        0.002770        0.1240
+10       0.001990        0.1410
+11       0.001440        0.1590
+12       0.001030        0.1800
+13       0.000745        0.2040
+14       0.000538        0.2360
+15       0.000485        0.2770
+16       0.000438        0.3330
+17       0.000397        0.4080
+18       0.000367        0.5070
+19       0.000354        0.6360
+20       0.000341        0.7990
+pdf 
+  2 
+Allowing parallel execution with up to 16 working processes.
+[1]   43 1705
+[1] "Region_1" "Region_2" "Region_3" "Region_4" "Region_5" "Region_6"
+NULL
+  RegionID   chr    start      end width n covMin  covMean    covSD  methMean
+1 Region_1 chr22 10673335 10673419    84 5     11 48.11628 20.99117 0.3091990
+2 Region_2 chr22 10684412 10684470    58 3     10 38.02326 18.96926 0.5816419
+3 Region_3 chr22 10720472 10720602   130 5     15 50.04651 18.81736 0.6472219
+4 Region_4 chr22 10749151 10749257   106 3     13 39.58140 15.47538 0.7667707
+5 Region_5 chr22 10764211 10764307    96 3     13 55.74419 22.94205 0.3280570
+6 Region_6 chr22 10956671 10956861   190 3     24 48.02326 10.61555 0.6602165
+      methSD
+1 0.09921709
+2 0.09102648
+3 0.09435566
+4 0.09762965
+5 0.09201384
+6 0.10144139
+[1] 1707   11
+ Calculating consensus modules and module eigengenes block-wise from all genes
+ Calculating topological overlaps block-wise from all genes
+ ....Working on set 1
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 2
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 3
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ..Working on block 1 .
+ ....Working on set 1
+ ....Working on set 2
+ ....Working on set 3
+ ....Calculating consensus network
+ ..Working on block 1 .
+ ....clustering and detecting modules..
+     ..done.
+ No modules detected in block 1 --> continuing with next block.
+ ....checking for genes that should be reassigned..
+ ..merging consensus modules that are too close..
+     mergeCloseModules: Merging modules whose distance is less than 0.2
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 1 module eigengenes in given set.
+ blockwiseConsensusModules: mergeCloseModule failed with this message:
+       Error in mergeCloseModules(multiExpr, colors[gsg$goodGenes], equalizeQuantiles = equalizeQuantilesForModuleMerging,  : 
+  Error in moduleEigengenes(expr = exprData[[set]]$data, colors = setColors,  : 
+  Color levels are empty. Possible reason: the only color is grey and grey module is excluded from the calculation.
+
+  ---> returning unmerged consensus modules
+ multiSetMEs: Calculating module MEs.
+   Working on set 1 ...
+   Working on set 2 ...
+   Working on set 3 ...
+Allowing multi-threading with up to 64 threads.
+Allowing multi-threading with up to 64 threads.
+Allowing parallel execution with up to 63 working processes.
+Runtime: 1134 seconds
+
+############### Job 12104942 summary from hive-dc-7-6-30 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-6-30
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T12:22:34
+Start               : 2026-04-14T12:22:37
+End                 : 2026-04-14T12:41:31
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:18:54
+Used CPU time       :    00:34:27
+% User (Computation): 92.25%
+% System (I/O)      :  7.75%
+Mem reserved        : 950G
+Max Mem used        : 8.08G (hive-dc-7-6-30)
+Max Disk Write      : 8.68G (hive-dc-7-6-30)
+Max Disk Read       : 4.23G (hive-dc-7-6-30)
+
+############### Job 12104942 info ###############
+JobId=12104942 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:18:54 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T12:22:34 EligibleTime=2026-04-14T12:22:34
+   AccrueTime=2026-04-14T12:22:34
+   StartTime=2026-04-14T12:22:37 EndTime=2026-04-14T12:41:31 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T12:22:37 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-6-30
+   BatchHost=hive-dc-7-6-30
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12107414 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-14
+############### Job 12107414 prolog ###############
+hive-dc-7-8-14
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  634646 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+An object of type 'BSseq' with
+  522032 methylation loci
+  43 samples
+has not been smoothed
+All assays are in-memory
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 59 working processes.
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1  0.03830 16.30          0.993 5590.000  5590.000 5830.00 5.03e-01
+2      2  0.00366  2.49          0.996 2880.000  2880.000 3130.00 2.59e-01
+3      3  0.00430 -1.83          0.998 1520.000  1520.000 1720.00 1.37e-01
+4      4  0.03320 -3.86          0.999  821.000   821.000  968.00 7.39e-02
+5      5  0.07480 -4.74          0.999  453.000   452.000  555.00 4.07e-02
+6      6  0.11400 -5.01          0.997  254.000   254.000  324.00 2.29e-02
+7      7  0.17300 -5.47          0.993  146.000   145.000  194.00 1.31e-02
+8      8  0.23000 -5.80          0.986   84.800    84.400  118.00 7.63e-03
+9      9  0.26500 -5.70          0.978   50.100    49.800   73.30 4.51e-03
+10    10  0.30900 -5.71          0.970   30.100    29.900   46.20 2.71e-03
+11    11  0.34400 -5.63          0.964   18.400    18.200   29.50 1.65e-03
+12    12  0.38700 -5.76          0.977   11.300    11.200   19.10 1.02e-03
+13    13  0.44100 -5.93          0.968    7.110     7.010   12.60 6.39e-04
+14    14  0.47300 -5.76          0.967    4.500     4.430    8.36 4.05e-04
+15    15  0.50100 -5.53          0.967    2.890     2.840    5.63 2.60e-04
+16    16  0.51600 -4.79          0.935    1.880     1.840    3.82 1.69e-04
+17    17  0.68500 -5.65          0.913    1.230     1.200    2.91 1.11e-04
+18    18  0.80300 -5.94          0.886    0.817     0.794    2.30 7.35e-05
+19    19  0.88500 -5.82          0.895    0.548     0.530    1.86 4.93e-05
+20    20  0.93100 -5.48          0.916    0.371     0.357    1.54 3.34e-05
+   Centralization Heterogeneity
+1        0.021900        0.0123
+2        0.022800        0.0241
+3        0.018200        0.0355
+4        0.013200        0.0465
+5        0.009210        0.0573
+6        0.006270        0.0679
+7        0.004330        0.0783
+8        0.003000        0.0886
+9        0.002080        0.0989
+10       0.001440        0.1090
+11       0.001000        0.1190
+12       0.000702        0.1300
+13       0.000492        0.1400
+14       0.000347        0.1510
+15       0.000246        0.1630
+16       0.000175        0.1750
+17       0.000151        0.1880
+18       0.000133        0.2040
+19       0.000118        0.2230
+20       0.000105        0.2450
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1  0.06490 22.000          0.993 5580.000  5580.000 5790.00 5.02e-01
+2      2  0.01570  5.210          0.997 2880.000  2880.000 3100.00 2.59e-01
+3      3  0.00125  0.977          0.998 1520.000  1520.000 1700.00 1.37e-01
+4      4  0.00472 -1.430          0.992  825.000   824.000  964.00 7.43e-02
+5      5  0.04280 -3.510          0.974  457.000   455.000  562.00 4.11e-02
+6      6  0.13000 -5.140          0.947  258.000   257.000  336.00 2.32e-02
+7      7  0.21900 -5.730          0.911  148.000   147.000  206.00 1.34e-02
+8      8  0.33000 -6.240          0.885   87.000    86.200  129.00 7.83e-03
+9      9  0.49200 -7.000          0.881   51.800    51.200   83.20 4.66e-03
+10    10  0.59400 -7.120          0.883   31.400    30.900   54.90 2.82e-03
+11    11  0.66300 -6.900          0.871   19.300    18.900   37.00 1.73e-03
+12    12  0.73500 -6.790          0.881   12.000    11.800   25.30 1.08e-03
+13    13  0.78800 -6.590          0.884    7.580     7.400   17.60 6.82e-04
+14    14  0.82100 -6.420          0.885    4.850     4.720   12.50 4.36e-04
+15    15  0.85900 -6.180          0.899    3.140     3.040    8.92 2.82e-04
+16    16  0.90200 -5.950          0.931    2.060     1.980    6.47 1.85e-04
+17    17  0.92000 -5.820          0.942    1.360     1.310    4.75 1.23e-04
+18    18  0.94700 -5.530          0.960    0.912     0.870    3.52 8.21e-05
+19    19  0.95800 -5.260          0.964    0.617     0.585    2.64 5.56e-05
+20    20  0.97100 -4.910          0.971    0.422     0.397    1.99 3.80e-05
+   Centralization Heterogeneity
+1        0.018900        0.0116
+2        0.019500        0.0227
+3        0.016200        0.0337
+4        0.012500        0.0446
+5        0.009520        0.0556
+6        0.007050        0.0667
+7        0.005140        0.0780
+8        0.003750        0.0896
+9        0.002820        0.1020
+10       0.002120        0.1140
+11       0.001590        0.1270
+12       0.001200        0.1400
+13       0.000904        0.1540
+14       0.000684        0.1690
+15       0.000520        0.1850
+16       0.000397        0.2020
+17       0.000305        0.2200
+18       0.000235        0.2400
+19       0.000182        0.2640
+20       0.000141        0.2910
+ pickSoftThreshold: calculating connectivity for given powers... 
+   Power SFT.R.sq  slope truncated.R.sq  mean.k. median.k.  max.k.  Density
+1      1 0.088100  38.00          0.992 5570.000  5560.000 5710.00 5.01e-01
+2      2 0.000342   1.10          0.959 2860.000  2860.000 3030.00 2.58e-01
+3      3 0.147000 -15.20          0.925 1510.000  1510.000 1670.00 1.36e-01
+4      4 0.469000 -21.10          0.929  816.000   813.000  950.00 7.35e-02
+5      5 0.652000 -20.80          0.935  451.000   448.000  558.00 4.05e-02
+6      6 0.773000 -19.60          0.943  254.000   252.000  337.00 2.28e-02
+7      7 0.847000 -17.50          0.946  146.000   144.000  209.00 1.31e-02
+8      8 0.898000 -15.50          0.951   85.100    83.900  133.00 7.66e-03
+9      9 0.909000 -14.10          0.935   50.600    49.700   86.10 4.55e-03
+10    10 0.929000 -12.50          0.939   30.500    29.900   57.10 2.75e-03
+11    11 0.582000 -16.10          0.501   18.700    18.300   38.60 1.68e-03
+12    12 0.596000 -14.40          0.514   11.600    11.300   26.50 1.05e-03
+13    13 0.612000 -13.10          0.531    7.320     7.110   18.50 6.59e-04
+14    14 0.624000 -12.00          0.544    4.670     4.520   13.10 4.20e-04
+15    15 0.631000 -11.10          0.551    3.010     2.910    9.43 2.71e-04
+16    16 0.635000 -10.20          0.557    1.970     1.890    6.85 1.77e-04
+17    17 0.597000 -11.40          0.499    1.300     1.240    5.04 1.17e-04
+18    18 0.598000 -10.70          0.501    0.869     0.827    3.74 7.82e-05
+19    19 0.631000  -8.21          0.554    0.587     0.554    2.80 5.28e-05
+20    20 0.985000  -5.59          0.980    0.400     0.375    2.12 3.60e-05
+   Centralization Heterogeneity
+1        0.013400       0.00794
+2        0.015200       0.01590
+3        0.014300       0.02400
+4        0.012100       0.03240
+5        0.009660       0.04120
+6        0.007470       0.05050
+7        0.005680       0.06020
+8        0.004270       0.07050
+9        0.003200       0.08140
+10       0.002390       0.09290
+11       0.001790       0.10500
+12       0.001340       0.11800
+13       0.001010       0.13100
+14       0.000762       0.14600
+15       0.000578       0.16100
+16       0.000440       0.17800
+17       0.000336       0.19600
+18       0.000258       0.21600
+19       0.000199       0.23900
+20       0.000154       0.26600
+pdf 
+  2 
+Allowing parallel execution with up to 16 working processes.
+[1]    43 11113
+[1] "Region_1" "Region_3" "Region_4" "Region_5" "Region_6" "Region_7"
+NULL
+  RegionID   chr    start      end width  n covMin   covMean    covSD  methMean
+1 Region_1 chr22 10673335 10673419    84  5     11  48.11628 20.99117 0.3091990
+2 Region_2 chr22 10679289 10679368    79  4      6  40.23256 22.67455 0.6522004
+3 Region_3 chr22 10684412 10684470    58  3     10  38.02326 18.96926 0.5816419
+4 Region_4 chr22 10686157 10686406   249  4     17  52.25581 20.88186 0.6664980
+5 Region_5 chr22 10686997 10687229   232  3      9  32.97674 14.46587 0.5917972
+6 Region_6 chr22 10687446 10688088   642 10     89 186.53488 52.67662 0.6414066
+      methSD
+1 0.09921709
+2 0.12501522
+3 0.09102648
+4 0.07483132
+5 0.12655874
+6 0.05024057
+[1] 11143    11
+ Calculating consensus modules and module eigengenes block-wise from all genes
+ Calculating topological overlaps block-wise from all genes
+ ....Working on set 1
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 2
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 3
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ..Working on block 1 .
+ ....Working on set 1
+ ......saving TOM similarity to disk cache..
+ ....Working on set 2
+ ......saving TOM similarity to disk cache..
+ ....Working on set 3
+ ......saving TOM similarity to disk cache..
+ ....Calculating consensus network
+ ......working on chunk 1
+ ......working on chunk 2
+ ..Working on block 1 .
+ ....clustering and detecting modules..
+     ..done.
+ ....calculating eigengenes..
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         Working on set 2 ...
+         Working on set 3 ...
+ ....checking consensus modules for statistical meaningfulness..
+ ....checking for genes that should be reassigned..
+ ......module membership p-values..
+ ......module membership scores..
+ ......individual modules.. 
+ ..merging consensus modules that are too close..
+     mergeCloseModules: Merging modules whose distance is less than 0.2
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+     mergeCloseModules: less than two proper modules.
+      ..color levels are grey, turquoise
+      ..there is nothing to merge.
+       Calculating new MEs...
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 2 module eigengenes in given set.
+null device 
+          1 
+Allowing multi-threading with up to 128 threads.
+Allowing multi-threading with up to 128 threads.
+Allowing parallel execution with up to 127 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+Runtime: 1328 seconds
+
+############### Job 12107414 summary from hive-dc-7-8-14 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-14
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T12:46:32
+Start               : 2026-04-14T12:46:35
+End                 : 2026-04-14T13:08:43
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:22:08
+Used CPU time       :    00:52:35
+% User (Computation): 91.51%
+% System (I/O)      :  8.49%
+Mem reserved        : 950G
+Max Mem used        : 7.20G (hive-dc-7-8-14)
+Max Disk Write      : 11.76G (hive-dc-7-8-14)
+Max Disk Read       : 7.35G (hive-dc-7-8-14)
+
+############### Job 12107414 info ###############
+JobId=12107414 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:22:08 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T12:46:32 EligibleTime=2026-04-14T12:46:32
+   AccrueTime=2026-04-14T12:46:32
+   StartTime=2026-04-14T12:46:35 EndTime=2026-04-14T13:08:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T12:46:35 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-14
+   BatchHost=hive-dc-7-8-14
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12109991 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-14
+############### Job 12109991 prolog ###############
+hive-dc-7-8-14
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 16 working processes.
+[1]    43 11113
+[1] "Region_1" "Region_3" "Region_4" "Region_5" "Region_6" "Region_7"
+NULL
+  RegionID   chr    start      end width  n covMin   covMean    covSD  methMean
+1 Region_1 chr22 10673335 10673419    84  5     11  48.11628 20.99117 0.3091990
+2 Region_2 chr22 10679289 10679368    79  4      6  40.23256 22.67455 0.6522004
+3 Region_3 chr22 10684412 10684470    58  3     10  38.02326 18.96926 0.5816419
+4 Region_4 chr22 10686157 10686406   249  4     17  52.25581 20.88186 0.6664980
+5 Region_5 chr22 10686997 10687229   232  3      9  32.97674 14.46587 0.5917972
+6 Region_6 chr22 10687446 10688088   642 10     89 186.53488 52.67662 0.6414066
+      methSD
+1 0.09921709
+2 0.12501522
+3 0.09102648
+4 0.07483132
+5 0.12655874
+6 0.05024057
+[1] 11143    11
+ Calculating consensus modules and module eigengenes block-wise from all genes
+ Calculating topological overlaps block-wise from all genes
+ ....Working on set 1
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 2
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ....Working on set 3
+    TOM calculation: adjacency..
+    ..will use 16 parallel threads.
+     Fraction of slow calculations: 0.000000
+    ..connectivity..
+    ..matrix multiplication (system BLAS)..
+    ..normalization..
+    ..done.
+ ..Working on block 1 .
+ ....Working on set 1
+ ......saving TOM similarity to disk cache..
+ ....Working on set 2
+ ......saving TOM similarity to disk cache..
+ ....Working on set 3
+ ......saving TOM similarity to disk cache..
+ ....Calculating consensus network
+ ......working on chunk 1
+ ......working on chunk 2
+ ..Working on block 1 .
+ ....clustering and detecting modules..
+     ..done.
+ ....calculating eigengenes..
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         Working on set 2 ...
+         Working on set 3 ...
+ ....checking consensus modules for statistical meaningfulness..
+ ....checking for genes that should be reassigned..
+ ......module membership p-values..
+ ......module membership scores..
+ ......individual modules.. 
+ ..merging consensus modules that are too close..
+     mergeCloseModules: Merging modules whose distance is less than 0.3
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+       Calculating new MEs...
+       multiSetMEs: Calculating module MEs.
+         Working on set 1 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+         Working on set 2 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+         Working on set 3 ...
+         moduleEigengenes: Calculating 9 module eigengenes in given set.
+null device 
+          1 
+Allowing multi-threading with up to 128 threads.
+Allowing multi-threading with up to 128 threads.
+Allowing parallel execution with up to 127 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+Allowing parallel execution with up to 127 working processes.
+Runtime: 454 seconds
+
+############### Job 12109991 summary from hive-dc-7-8-14 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-14
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T13:14:25
+Start               : 2026-04-14T13:14:28
+End                 : 2026-04-14T13:22:02
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:07:34
+Used CPU time       :    00:11:24
+% User (Computation): 90.03%
+% System (I/O)      :  9.97%
+Mem reserved        : 950G
+Max Mem used        : 6.33G (hive-dc-7-8-14)
+Max Disk Write      : 3.13G (hive-dc-7-8-14)
+Max Disk Read       : 3.53G (hive-dc-7-8-14)
+
+############### Job 12109991 info ###############
+JobId=12109991 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:07:34 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T13:14:25 EligibleTime=2026-04-14T13:14:25
+   AccrueTime=2026-04-14T13:14:25
+   StartTime=2026-04-14T13:14:28 EndTime=2026-04-14T13:22:02 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T13:14:28 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-14
+   BatchHost=hive-dc-7-8-14
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12111825 prolog ###############
+SLURM_NODELIST: hive-dc-7-6-30
+############### Job 12111825 prolog ###############
+hive-dc-7-6-30
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 63 working processes.
+[1] TRUE
+Allowing parallel execution with up to 63 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+Fatal error: cannot open file '/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/comethyl_scripts/consensus/16_enrichment_consensus.R': No such file or directory
+
+############### Job 12111825 summary from hive-dc-7-6-30 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-6-30
+Cores               : 59
+GPUs                : 0
+State               : FAILED
+ExitCode            : 2:0
+Submit              : 2026-04-14T13:34:26
+Start               : 2026-04-14T13:34:28
+End                 : 2026-04-14T13:36:59
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:02:31
+Used CPU time       :    00:02:12
+% User (Computation): 94.21%
+% System (I/O)      :  5.79%
+Mem reserved        : 950G
+Max Mem used        : 1.02G (hive-dc-7-6-30)
+Max Disk Write      : 13.48M (hive-dc-7-6-30)
+Max Disk Read       : 352.61M (hive-dc-7-6-30)
+
+############### Job 12111825 info ###############
+JobId=12111825 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=NonZeroExitCode Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=2:0
+   RunTime=00:02:31 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T13:34:26 EligibleTime=2026-04-14T13:34:26
+   AccrueTime=2026-04-14T13:34:26
+   StartTime=2026-04-14T13:34:28 EndTime=2026-04-14T13:36:59 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T13:34:28 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-6-30
+   BatchHost=hive-dc-7-6-30
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12112670 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-46
+############### Job 12112670 prolog ###############
+hive-dc-7-8-46
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 127 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+Runtime: 72 seconds
+
+############### Job 12112670 summary from hive-dc-7-8-46 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-46
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T13:50:27
+Start               : 2026-04-14T13:50:29
+End                 : 2026-04-14T13:51:41
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:01:12
+Used CPU time       :    00:01:18
+% User (Computation): 93.38%
+% System (I/O)      :  6.62%
+Mem reserved        : 950G
+Max Mem used        : 874.47M (hive-dc-7-8-46)
+Max Disk Write      : 942.08K (hive-dc-7-8-46)
+Max Disk Read       : 151.62M (hive-dc-7-8-46)
+
+############### Job 12112670 info ###############
+JobId=12112670 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:12 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T13:50:27 EligibleTime=2026-04-14T13:50:27
+   AccrueTime=2026-04-14T13:50:27
+   StartTime=2026-04-14T13:50:29 EndTime=2026-04-14T13:51:41 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T13:50:29 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-46
+   BatchHost=hive-dc-7-8-46
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT############### Job 12113276 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-14
+############### Job 12113276 prolog ###############
+hive-dc-7-8-14
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+Allowing parallel execution with up to 127 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+############### Job 12113666 prolog ###############
+SLURM_NODELIST: hive-dc-7-8-46
+############### Job 12113666 prolog ###############
+hive-dc-7-8-46
+/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi
+R home:  /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/R 
+R version 4.3.3 (2024-02-29)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 22.04.5 LTS
+
+Matrix products: default
+BLAS/LAPACK: /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/reproducibility/pixi/.pixi/envs/default/lib/libopenblasp-r0.3.32.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+
+time zone: US/Pacific
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.3
+
+############### Job 12113276 summary from hive-dc-7-8-14 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-14
+Cores               : 59
+GPUs                : 0
+State               : CANCELLED,CANCELLED by 2224567
+ExitCode            : 0:0
+Submit              : 2026-04-14T14:12:36
+Start               : 2026-04-14T14:12:38
+End                 : 2026-04-14T14:28:54
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:16:16
+Used CPU time       :    00:15:18
+% User (Computation): 95.85%
+% System (I/O)      :  4.15%
+Mem reserved        : 950G
+Max Mem used        : 2.78G (hive-dc-7-8-14)
+Max Disk Write      : 18.90G (hive-dc-7-8-14)
+Max Disk Read       : 19.08G (hive-dc-7-8-14)
+
+############### Job 12113276 info ###############
+JobId=12113276 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:15
+   RunTime=00:16:14 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T14:12:36 EligibleTime=2026-04-14T14:12:36
+   AccrueTime=2026-04-14T14:12:36
+   StartTime=2026-04-14T14:12:38 EndTime=2026-04-14T14:28:52 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T14:12:38 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-14
+   BatchHost=hive-dc-7-8-14
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUTAllowing parallel execution with up to 127 working processes.
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+[1] "104" "114" "117" "120" "122" "138"
+ - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set...  - Your gene set... Runtime: 415 seconds
+
+############### Job 12113666 summary from hive-dc-7-8-46 ###############
+Name                : Cometh_growell_test
+User                : gekuodza
+Account             : lasallegrp
+Partition           : high
+Nodes               : hive-dc-7-8-46
+Cores               : 59
+GPUs                : 0
+State               : COMPLETED
+ExitCode            : 0:0
+Submit              : 2026-04-14T14:28:21
+Start               : 2026-04-14T14:28:53
+End                 : 2026-04-14T14:35:48
+Reserved walltime   : 14-00:00:00
+Used walltime       :    00:06:55
+Used CPU time       :    00:01:50
+% User (Computation): 94.10%
+% System (I/O)      :  5.90%
+Mem reserved        : 950G
+Max Mem used        : 1.35G (hive-dc-7-8-46)
+Max Disk Write      : 9.32M (hive-dc-7-8-46)
+Max Disk Read       : 194.18M (hive-dc-7-8-46)
+
+############### Job 12113666 info ###############
+JobId=12113666 JobName=Cometh_growell_test
+   UserId=gekuodza(2224567) GroupId=gekuodza(2224567) MCS_label=N/A
+   Priority=8145 Nice=0 Account=lasallegrp QOS=lasallegrp-high-qos
+   JobState=COMPLETING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:06:55 TimeLimit=14-00:00:00 TimeMin=N/A
+   SubmitTime=2026-04-14T14:28:21 EligibleTime=2026-04-14T14:28:21
+   AccrueTime=2026-04-14T14:28:21
+   StartTime=2026-04-14T14:28:53 EndTime=2026-04-14T14:35:48 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-04-14T14:28:53 Scheduler=Main
+   Partition=high AllocNode:Sid=hive-dc-7-9-43:61714
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=hive-dc-7-8-46
+   BatchHost=hive-dc-7-8-46
+   NumNodes=1 NumCPUs=59 NumTasks=1 CPUs/Task=59 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=59,mem=950G,node=1,billing=59
+   AllocTRES=cpu=59,mem=950G,node=1,billing=59
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=59 MinMemoryNode=950G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   SubmitLine=sbatch /quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/scripts/run_pixi_test.slurm
+   WorkDir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests
+   StdErr=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.err
+   StdIn=/dev/null
+   StdOut=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George/tests/00_std_err_logs/comethyl_pearson_report.out
+   TresPerTask=cpu=59
+   MailUser=gekuodza@ucdavis.edu MailType=INVALID_DEPEND,BEGIN,END,FAIL,REQUEUE,STAGE_OUT
