@@ -8,7 +8,7 @@
 #SBATCH --error=00_std_err_logs/comethyl_pearson_report.err
 #SBATCH --cpus-per-task=60
 #SBATCH --account=lasallegrp
-#SBATCH --mem=1000G
+#SBATCH --mem=500G
 #SBATCH --mail-type=ALL
 #SBATCH --chdir=/quobyte/lasallegrp/projects/GROWELL/WGBS/2025_DBS_comethyl_George
 
@@ -45,7 +45,7 @@ OUT=$PROJECT/comethyl_output/consensus
 
 # Reference filter labels (derived from scripts 01 and 02)
 CPG_LABEL=cov3_75pct
-REGION_LABEL=covMin14_methSD0p06
+REGION_LABEL=covMin14_methSD0p06 #covMin14_methSD0p06 covMin10_methSD0p09
 
 # # ================================================================
 # # SCRIPT 00: Import CpG reports (one per dataset)
@@ -85,214 +85,214 @@ REGION_LABEL=covMin14_methSD0p06
 #   --cov 3 \
 #   --per_sample 0.75
 
-# ================================================================
-# SCRIPT 02: Filter reference regions
-# Output: $OUT/02_reference_region_filter/Baseline/cov3_75pct/covMin5_methSD0p05/
-# ================================================================
+# # ================================================================
+# # SCRIPT 02: Filter reference regions
+# # Output: $OUT/02_reference_region_filter/Baseline/cov3_75pct/covMin5_methSD0p05/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/02_filter_reference_regions_consensus.R \
-  --project_root $PROJECT \
-  --dataset_label Baseline \
-  --input_regions $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Regions.txt \
-  --cov_min 14 \
-  --meth_sd 0.06
+# pixi run Rscript $SCRIPTS/02_filter_reference_regions_consensus.R \
+#   --project_root $PROJECT \
+#   --dataset_label Baseline \
+#   --input_regions $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Regions.txt \
+#   --cov_min 14 \
+#   --meth_sd 0.06
 
-# ================================================================
-# SCRIPT 03: Build reference region methylation (Baseline only)
-# Output: $OUT/03_region_methylation/Baseline/cov3_75pct/covMin5_methSD0p05/
-# ================================================================
+# # ================================================================
+# # SCRIPT 03: Build reference region methylation (Baseline only)
+# # Output: $OUT/03_region_methylation/Baseline/cov3_75pct/covMin5_methSD0p05/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/03_build_reference_region_methylation_consensus.R \
-  --project_root $PROJECT \
-  --dataset_label Baseline \
-  --input_bs $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Filtered_BSseq.rds \
-  --input_regions $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.rds
+# pixi run Rscript $SCRIPTS/03_build_reference_region_methylation_consensus.R \
+#   --project_root $PROJECT \
+#   --dataset_label Baseline \
+#   --input_bs $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Filtered_BSseq.rds \
+#   --input_regions $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.rds
 
-# ================================================================
-# SCRIPT 04: Align other datasets to reference CpGs
-# Output: $OUT/04_align_to_reference_cpgs/<dataset_label>/
-# ================================================================
+# # ================================================================
+# # SCRIPT 04: Align other datasets to reference CpGs
+# # Output: $OUT/04_align_to_reference_cpgs/<dataset_label>/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/04_align_other_datasets_to_reference_cpgs_consensus.R \
-  --project_root $PROJECT \
-  --reference_bs $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Filtered_BSseq.rds \
-  --dataset1_label 36-38wk \
-  --dataset1_meta $DATA/sample_info_36_38wk.xlsx \
-  --dataset1_cyto_dir $PROJECT/data/processed/36-38wk \
-  --dataset2_label Postpartum \
-  --dataset2_meta $DATA/sample_info_postpartum.xlsx \
-  --dataset2_cyto_dir $PROJECT/data/processed/Postpartum \
-  --cov 1 \
-  --per_sample 0.01 \
-  --workers 8
+# pixi run Rscript $SCRIPTS/04_align_other_datasets_to_reference_cpgs_consensus.R \
+#   --project_root $PROJECT \
+#   --reference_bs $OUT/01_reference_filter_regions/Baseline/$CPG_LABEL/Filtered_BSseq.rds \
+#   --dataset1_label 36-38wk \
+#   --dataset1_meta $DATA/sample_info_36_38wk.xlsx \
+#   --dataset1_cyto_dir $PROJECT/data/processed/36-38wk \
+#   --dataset2_label Postpartum \
+#   --dataset2_meta $DATA/sample_info_postpartum.xlsx \
+#   --dataset2_cyto_dir $PROJECT/data/processed/Postpartum \
+#   --cov 1 \
+#   --per_sample 0.01 \
+#   --workers 8
 
-# ================================================================
-# SCRIPT 05: Build other dataset region methylation
-# Output: $OUT/03_region_methylation/<dataset>/cov3_75pct/covMin5_methSD0p05/
-# ================================================================
+# # ================================================================
+# # SCRIPT 05: Build other dataset region methylation
+# # Output: $OUT/03_region_methylation/<dataset>/cov3_75pct/covMin5_methSD0p05/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/05_build_other_dataset_region_methylation_consensus.R \
-  --project_root $PROJECT \
-  --reference_regions $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.rds \
-  --dataset1_label 36-38wk \
-  --dataset1_bs $OUT/04_align_to_reference_cpgs/36-38wk/Filtered_BSseq.rds \
-  --dataset2_label Postpartum \
-  --dataset2_bs $OUT/04_align_to_reference_cpgs/Postpartum/Filtered_BSseq.rds
+# pixi run Rscript $SCRIPTS/05_build_other_dataset_region_methylation_consensus.R \
+#   --project_root $PROJECT \
+#   --reference_regions $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.rds \
+#   --dataset1_label 36-38wk \
+#   --dataset1_bs $OUT/04_align_to_reference_cpgs/36-38wk/Filtered_BSseq.rds \
+#   --dataset2_label Postpartum \
+#   --dataset2_bs $OUT/04_align_to_reference_cpgs/Postpartum/Filtered_BSseq.rds
 
-# ================================================================
-# SCRIPT 05b: Filter shared complete regions
-#
-# FIX: --regions_file must point to Filtered_Regions.txt from script 02,
-#      NOT a file inside 05b output. This drives cpg_label/region_label
-#      derivation for the output path:
-#      $OUT/05b_shared_complete_regions/cov3_75pct/covMin5_methSD0p05/
-# ================================================================
+# # ================================================================
+# # SCRIPT 05b: Filter shared complete regions
+# #
+# # FIX: --regions_file must point to Filtered_Regions.txt from script 02,
+# #      NOT a file inside 05b output. This drives cpg_label/region_label
+# #      derivation for the output path:
+# #      $OUT/05b_shared_complete_regions/cov3_75pct/covMin5_methSD0p05/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/05b_filter_shared_complete_regions_consensus.R \
-  --project_root $PROJECT \
-  --dataset1_label Baseline \
-  --dataset1_meth $OUT/03_region_methylation/Baseline/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
-  --dataset2_label 36-38wk \
-  --dataset2_meth $OUT/03_region_methylation/36-38wk/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
-  --dataset3_label Postpartum \
-  --dataset3_meth $OUT/03_region_methylation/Postpartum/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
-  --regions_file $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.txt
+# pixi run Rscript $SCRIPTS/05b_filter_shared_complete_regions_consensus.R \
+#   --project_root $PROJECT \
+#   --dataset1_label Baseline \
+#   --dataset1_meth $OUT/03_region_methylation/Baseline/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
+#   --dataset2_label 36-38wk \
+#   --dataset2_meth $OUT/03_region_methylation/36-38wk/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
+#   --dataset3_label Postpartum \
+#   --dataset3_meth $OUT/03_region_methylation/Postpartum/$CPG_LABEL/$REGION_LABEL/Region_Methylation.rds \
+#   --regions_file $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.txt
 
-# ================================================================
-# SCRIPT 06: PC diagnostics (run separately per dataset)
-#
-# FIX: --input_meth now includes cov3_75pct/covMin5_methSD0p05 in path
-# Output: $OUT/06_pc_diagnostics/<dataset>/cov3_75pct/covMin5_methSD0p05/
-# ================================================================
+# # ================================================================
+# # SCRIPT 06: PC diagnostics (run separately per dataset)
+# #
+# # FIX: --input_meth now includes cov3_75pct/covMin5_methSD0p05 in path
+# # Output: $OUT/06_pc_diagnostics/<dataset>/cov3_75pct/covMin5_methSD0p05/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Baseline_Methylation_complete.rds \
-  --sample_info $DATA/sample_info_baseline.xlsx \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --selected_trait_mode protected_and_technical \
-  --threads 59
+# pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Baseline_Methylation_complete.rds \
+#   --sample_info $DATA/sample_info_baseline.xlsx \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --selected_trait_mode protected_and_technical \
+#   --threads 59
 
-pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/36-38wk_Methylation_complete.rds \
-  --sample_info $DATA/sample_info_36_38wk.xlsx \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --selected_trait_mode protected_and_technical \
-  --threads 59
+# pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/36-38wk_Methylation_complete.rds \
+#   --sample_info $DATA/sample_info_36_38wk.xlsx \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --selected_trait_mode protected_and_technical \
+#   --threads 59
 
-pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Postpartum_Methylation_complete.rds \
-  --sample_info $DATA/sample_info_postpartum.xlsx \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --selected_trait_mode protected_and_technical \
-  --threads 59
+# pixi run Rscript $SCRIPTS/06_pc_diagnostics_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Postpartum_Methylation_complete.rds \
+#   --sample_info $DATA/sample_info_postpartum.xlsx \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --selected_trait_mode protected_and_technical \
+#   --threads 59
 
-# ================================================================
-# SCRIPT 07: Methylation adjustment (run separately per dataset)
-#
-# FIX: --input_meth updated to new 05b path (includes cpg/region levels)
-# FIX: --input_pcs and --pc_trait_stats now include cov3_75pct/covMin5_methSD0p05
-# Output: $OUT/07_methylation_adjustment/<dataset>/cov3_75pct/covMin5_methSD0p05/<variant>/
-# ================================================================
+# # ================================================================
+# # SCRIPT 07: Methylation adjustment (run separately per dataset)
+# #
+# # FIX: --input_meth updated to new 05b path (includes cpg/region levels)
+# # FIX: --input_pcs and --pc_trait_stats now include cov3_75pct/covMin5_methSD0p05
+# # Output: $OUT/07_methylation_adjustment/<dataset>/cov3_75pct/covMin5_methSD0p05/<variant>/
+# # ================================================================
 
-pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Baseline_Methylation_complete.rds \
-  --input_pcs $OUT/06_pc_diagnostics/Baseline/$CPG_LABEL/$REGION_LABEL/PCs.rds \
-  --pc_trait_stats $OUT/06_pc_diagnostics/Baseline/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --run_v1 TRUE \
-  --run_v2 TRUE \
-  --run_v3 TRUE \
-  --v2_cor_method bicor \
-  --v2_p_thresh 0.05
+# pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Baseline_Methylation_complete.rds \
+#   --input_pcs $OUT/06_pc_diagnostics/Baseline/$CPG_LABEL/$REGION_LABEL/PCs.rds \
+#   --pc_trait_stats $OUT/06_pc_diagnostics/Baseline/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --run_v1 TRUE \
+#   --run_v2 TRUE \
+#   --run_v3 TRUE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
 
-pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/36-38wk_Methylation_complete.rds \
-  --input_pcs $OUT/06_pc_diagnostics/36-38wk/$CPG_LABEL/$REGION_LABEL/PCs.rds \
-  --pc_trait_stats $OUT/06_pc_diagnostics/36-38wk/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --run_v1 TRUE \
-  --run_v2 TRUE \
-  --run_v3 TRUE \
-  --v2_cor_method bicor \
-  --v2_p_thresh 0.05
+# pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/36-38wk_Methylation_complete.rds \
+#   --input_pcs $OUT/06_pc_diagnostics/36-38wk/$CPG_LABEL/$REGION_LABEL/PCs.rds \
+#   --pc_trait_stats $OUT/06_pc_diagnostics/36-38wk/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --run_v1 TRUE \
+#   --run_v2 TRUE \
+#   --run_v3 TRUE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
 
-pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
-  --project_root $PROJECT \
-  --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Postpartum_Methylation_complete.rds \
-  --input_pcs $OUT/06_pc_diagnostics/Postpartum/$CPG_LABEL/$REGION_LABEL/PCs.rds \
-  --pc_trait_stats $OUT/06_pc_diagnostics/Postpartum/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
-  --protected_traits_file $CONFIG/protected_traits.txt \
-  --technical_traits_file $CONFIG/technical_traits.txt \
-  --run_v1 TRUE \
-  --run_v2 TRUE \
-  --run_v3 TRUE \
-  --v2_cor_method bicor \
-  --v2_p_thresh 0.05
+# pixi run Rscript $SCRIPTS/07_methylation_adjustment_consensus.R \
+#   --project_root $PROJECT \
+#   --input_meth $OUT/05b_shared_complete_regions/$CPG_LABEL/$REGION_LABEL/Postpartum_Methylation_complete.rds \
+#   --input_pcs $OUT/06_pc_diagnostics/Postpartum/$CPG_LABEL/$REGION_LABEL/PCs.rds \
+#   --pc_trait_stats $OUT/06_pc_diagnostics/Postpartum/$CPG_LABEL/$REGION_LABEL/PC_Trait_Correlation_Stats_Bicor.tsv \
+#   --protected_traits_file $CONFIG/protected_traits.txt \
+#   --technical_traits_file $CONFIG/technical_traits.txt \
+#   --run_v1 TRUE \
+#   --run_v2 TRUE \
+#   --run_v3 TRUE \
+#   --v2_cor_method bicor \
+#   --v2_p_thresh 0.05
 
-# ================================================================
-# SCRIPT 08: Soft-threshold power analysis (one run per adjustment version)
-#
-# FIX: --dataset*_meth now includes cov3_75pct/covMin5_methSD0p05 levels
-# Output: $OUT/08_soft_power/cov3_75pct/covMin5_methSD0p05/<adjustment_version>/
-# ================================================================
+# # ================================================================
+# # SCRIPT 08: Soft-threshold power analysis (one run per adjustment version)
+# #
+# # FIX: --dataset*_meth now includes cov3_75pct/covMin5_methSD0p05 levels
+# # Output: $OUT/08_soft_power/cov3_75pct/covMin5_methSD0p05/<adjustment_version>/
+# # ================================================================
 
-# v1
-pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
-  --project_root $PROJECT \
-  --dataset1_label Baseline \
-  --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds \
-  --dataset2_label 36-38wk \
-  --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/36-38wk_Adjusted_Region_Methylation_allPCs.rds \
-  --dataset3_label Postpartum \
-  --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Postpartum_Adjusted_Region_Methylation_allPCs.rds \
-  --adjustment_version v1_all_pcs \
-  --softpower_cor pearson \
-  --power_min 1 \
-  --power_max 20 \
-  --threads 59 \
-  --scale_free_cutoff 0.8
-
-# v2
-pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
-  --project_root $PROJECT \
-  --dataset1_label Baseline \
-  --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/Baseline_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
-  --dataset2_label 36-38wk \
-  --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/36-38wk_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
-  --dataset3_label Postpartum \
-  --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/Postpartum_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
-  --adjustment_version v2_exclude_protected_pcs \
-  --softpower_cor pearson \
-  --power_min 1 \
-  --power_max 20 \
-  --threads 59 \
-  --scale_free_cutoff 0.8
-
-# v3
+# # v1
 # pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
 #   --project_root $PROJECT \
 #   --dataset1_label Baseline \
-#   --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/Baseline_Adjusted_Region_Methylation_technicalPCs_only.rds \
+#   --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds \
 #   --dataset2_label 36-38wk \
-#   --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/36-38wk_Adjusted_Region_Methylation_technicalPCs_only.rds \
+#   --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/36-38wk_Adjusted_Region_Methylation_allPCs.rds \
 #   --dataset3_label Postpartum \
-#   --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/Postpartum_Adjusted_Region_Methylation_technicalPCs_only.rds \
-#   --adjustment_version v3_technical_pcs_only \
+#   --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Postpartum_Adjusted_Region_Methylation_allPCs.rds \
+#   --adjustment_version v1_all_pcs \
 #   --softpower_cor pearson \
 #   --power_min 1 \
 #   --power_max 20 \
 #   --threads 59 \
 #   --scale_free_cutoff 0.8
+
+# # v2
+# pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
+#   --project_root $PROJECT \
+#   --dataset1_label Baseline \
+#   --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/Baseline_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+#   --dataset2_label 36-38wk \
+#   --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/36-38wk_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+#   --dataset3_label Postpartum \
+#   --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v2_exclude_protected_pcs/Postpartum_Adjusted_Region_Methylation_excluding_protected_PCs_bicor.rds \
+#   --adjustment_version v2_exclude_protected_pcs \
+#   --softpower_cor pearson \
+#   --power_min 1 \
+#   --power_max 20 \
+#   --threads 59 \
+#   --scale_free_cutoff 0.8
+
+# # v3
+# # pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
+# #   --project_root $PROJECT \
+# #   --dataset1_label Baseline \
+# #   --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/Baseline_Adjusted_Region_Methylation_technicalPCs_only.rds \
+# #   --dataset2_label 36-38wk \
+# #   --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/36-38wk_Adjusted_Region_Methylation_technicalPCs_only.rds \
+# #   --dataset3_label Postpartum \
+# #   --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v3_technical_pcs_only/Postpartum_Adjusted_Region_Methylation_technicalPCs_only.rds \
+# #   --adjustment_version v3_technical_pcs_only \
+# #   --softpower_cor pearson \
+# #   --power_min 1 \
+# #   --power_max 20 \
+# #   --threads 59 \
+# #   --scale_free_cutoff 0.8
 
 # ================================================================
 # SCRIPT 09: Consensus module detection (one run per adjustment version)
@@ -305,29 +305,29 @@ pixi run Rscript $SCRIPTS/08_softpower_consensus.R \
 # Output: $OUT/09_consensus_modules/cov3_75pct/covMin5_methSD0p05/<adjustment_version>/
 # ================================================================
 
-# v1
-pixi run Rscript $SCRIPTS/09_modules_consensus.R \
-  --project_root $PROJECT \
-  --regions_file $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.txt \
-  --dataset1_label Baseline \
-  --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds \
-  --dataset2_label 36-38wk \
-  --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/36-38wk_Adjusted_Region_Methylation_allPCs.rds \
-  --dataset3_label Postpartum \
-  --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Postpartum_Adjusted_Region_Methylation_allPCs.rds \
-  --adjustment_version v1_all_pcs \
-  --chosen_power_file $OUT/08_soft_power/shared/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/chosen_power.txt \
-  --consensus_cor pearson \
-  --network_type signed \
-  --tom_type signed \
-  --deep_split 1 \
-  --min_module_size 10 \
-  --merge_cut_height 0.2 \
-  --max_block_size 40000 \
-  --network_calibration "single quantile" \
-  --save_consensus_toms TRUE \
-  --threads 20 \
-  --max_p_outliers 0.1
+# # v1
+# pixi run Rscript $SCRIPTS/09_modules_consensus.R \
+#   --project_root $PROJECT \
+#   --regions_file $OUT/02_reference_region_filter/Baseline/$CPG_LABEL/$REGION_LABEL/Filtered_Regions.txt \
+#   --dataset1_label Baseline \
+#   --dataset1_meth $OUT/07_methylation_adjustment/Baseline/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Baseline_Adjusted_Region_Methylation_allPCs.rds \
+#   --dataset2_label 36-38wk \
+#   --dataset2_meth $OUT/07_methylation_adjustment/36-38wk/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/36-38wk_Adjusted_Region_Methylation_allPCs.rds \
+#   --dataset3_label Postpartum \
+#   --dataset3_meth $OUT/07_methylation_adjustment/Postpartum/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/Postpartum_Adjusted_Region_Methylation_allPCs.rds \
+#   --adjustment_version v1_all_pcs \
+#   --chosen_power_file $OUT/08_soft_power/shared/$CPG_LABEL/$REGION_LABEL/v1_all_pcs/chosen_power.txt \
+#   --consensus_cor pearson \
+#   --network_type signed \
+#   --tom_type signed \
+#   --deep_split 1 \
+#   --min_module_size 10 \
+#   --merge_cut_height 0.2 \
+#   --max_block_size 40000 \
+#   --network_calibration "single quantile" \
+#   --save_consensus_toms TRUE \
+#   --threads 20 \
+#   --max_p_outliers 0.1
 
 # v2
 pixi run Rscript $SCRIPTS/09_modules_consensus.R \
@@ -345,7 +345,7 @@ pixi run Rscript $SCRIPTS/09_modules_consensus.R \
   --network_type signed \
   --tom_type signed \
   --deep_split 1 \
-  --min_module_size 10 \
+  --min_module_size 15 \
   --merge_cut_height 0.2 \
   --max_block_size 40000 \
   --network_calibration "single quantile" \
